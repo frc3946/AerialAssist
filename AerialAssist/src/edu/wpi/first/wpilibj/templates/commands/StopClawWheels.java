@@ -4,7 +4,8 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.templates.subsystems.ClawWheels;
 /**
  *
  * @author OpalStone
@@ -12,11 +13,12 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class StopClawWheels extends CommandBase {
     
     int timeout;
-    private final Subsystem ClawWheels;
+    ClawWheels clawWheels = new ClawWheels();
+   
     public StopClawWheels(int newTimeout) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(ClawWheels);
+        requires(clawWheels);
         timeout = newTimeout;
     }
 
@@ -36,7 +38,7 @@ public class StopClawWheels extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
-        ClawWheels.set(0, 0);
+        clawWheels.set(Relay.Value.kOff);
     }
 
     // Called when another command which requires one or more of the same
