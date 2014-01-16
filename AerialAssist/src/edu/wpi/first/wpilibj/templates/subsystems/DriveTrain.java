@@ -9,7 +9,6 @@ import edu.wpi.first.wpilibj.Jaguar;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.templates.commands.TankDrive;
 
 /**
  *
@@ -24,7 +23,7 @@ public class DriveTrain extends Subsystem {
     private RobotDrive drive = new RobotDrive(frontLeft, backLeft, frontRight, frontLeft);
     
     protected void initDefaultCommand() {
-        setDefaultCommand(new TankDrive()); //To change body of generated methods, choose Tools | Templates.
+        
     }
     
     public void mecanumDrive(GenericHID move, Joystick.AxisType rotate) {
