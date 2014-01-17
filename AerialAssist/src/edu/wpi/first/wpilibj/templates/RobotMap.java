@@ -11,5 +11,6 @@ public class RobotMap {
     
      public static final int clawPistonExtend = 1;
      public static final int clawPistonRetract = 2;
+     public static final int slot = 13;
     
 }
