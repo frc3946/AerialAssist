@@ -1,8 +1,10 @@
 
 package edu.wpi.first.wpilibj.templates;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.templates.commands.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -34,11 +36,38 @@ public class OI {
     // button.whenPressed(new ExampleCommand());
     
     // Run the command while the button is being held down and interrupt it once
-    // the button is released.
+    // the button is released
     // button.whileHeld(new ExampleCommand());
     
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
-}
-
+//    private XboxController xbox;
+    private Joystick genius;
+    
+    private Button launchFrisbee;
+    private Button loadFrisbee;
+//    private Button firePiston;
+    private Button TopClimbingPiston;
+    private Button BottomClimbingPiston;
+    private Button fender;
+//    private Button Climb;
+    private Button pitchFore;
+    private Button pitchAft;
+    private Button StopMotors;
+    private Button AutoAim;
+    private Button debug;
+    
+    private Button adjustUp;
+    private Button adjustLeft;
+    private Button adjustRight;
+    private Button adjustDown;
+    
+    
+    public OI() {
+        
+    }
+}/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
