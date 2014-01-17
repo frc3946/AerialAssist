@@ -15,5 +15,6 @@ public class RobotMap {
      public static final int fRight = 1;
      public static final int bLeft = 2;
      public static final int bRight = 3;
+     public static final int slot = 13;
     
 }
