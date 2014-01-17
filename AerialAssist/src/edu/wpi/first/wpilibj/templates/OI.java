@@ -1,91 +1,16 @@
 
 package edu.wpi.first.wpilibj.templates;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.templates.commands.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
  */
-public class OI  {RaspberryPiThread extends Thread {
-        ThreadedPi m_raspberryPi;
-    
-        public RaspberryPiThread(ThreadedPi raspberryPi) {
-            super("PiSocket");
-            m_raspberryPi = raspberryPi;
-        }
-        
-        public void run() {
-            while(m_run) {
-                if(m_raspberryPi.isEnabled()) { //Checks for Thread to run
-                    if(m_raspberryPi.isConnected()) {
-                        report = true;
-                        try {
-                            String[] data = m_raspberryPi.tokenizeData(m_raspberryPi.getRawData()); //Get and examine Data
-                            time = Timer.getFPGATimestamp();
-                            if(data.length < 2) { //Error Check
-                                report = false;
-                            } else {
-                                try {
-                                    distance = Integer.parseInt(data[1]); //Get data
-                                    offset = Integer.parseInt(data[0]);
-                                } catch(NumberFormatException ex) {
-                                    report = false;
-                                }
-                            }
-                        } catch (IOException ex) {
-                            report = false;
-                        }
-                        DataKeeper.setReport(report);
-                                
-                        if(report) { //Store Data in DataKeeper
-                            DataKeeper.setDistance(distance);
-                            DataKeeper.setOffset(offset);
-                            DataKeeper.setTime(time);
-                        }
-                    } else {
-                        try {
-                            m_raspberryPi.connect();
-                        } catch (IOException ex) {
-                            DataKeeper.setReport(false);
-                        }
-                    }
-                }
-                try {
-                    Thread.sleep(375); //Wait half second before getting Data again
-                } catch(InterruptedException ex) {}
-            }
-        }
-    }
-    
-    public ThreadedPi() {
-        m_enabled = false;
-        m_thread = new RaspberryPiThread(this);
-        try{
-         connect();
-        } catch (IOException ex){
-            ex.printStackTrace();
-            System.out.println(ex.getMessage());
-        }
-        
-        m_thread.start();
-public class RaspberryPi extends Subsystem {
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
-    SocketPi raspberryPi;
-
-    public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
-//        setDefaultCommand(new PrintPiData());
-    }
-    public SocketPi getPi() {
-        return raspberryPi;
-    }
-    
-    public RaspberryPi() {
-        super();
+public class OI {
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
@@ -111,11 +36,38 @@ public class RaspberryPi extends Subsystem {
     // button.whenPressed(new ExampleCommand());
     
     // Run the command while the button is being held down and interrupt it once
-    // the button is released.
+    // the button is released
     // button.whileHeld(new ExampleCommand());
     
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
-}
-
+//    private XboxController xbox;
+    private Joystick genius;
+    
+    private Button launchFrisbee;
+    private Button loadFrisbee;
+//    private Button firePiston;
+    private Button TopClimbingPiston;
+    private Button BottomClimbingPiston;
+    private Button fender;
+//    private Button Climb;
+    private Button pitchFore;
+    private Button pitchAft;
+    private Button StopMotors;
+    private Button AutoAim;
+    private Button debug;
+    
+    private Button adjustUp;
+    private Button adjustLeft;
+    private Button adjustRight;
+    private Button adjustDown;
+    
+    
+    public OI() {
+        
+    }
+}/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
