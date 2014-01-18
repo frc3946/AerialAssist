@@ -14,13 +14,9 @@ public class RobotMap {
      public static final int fRight = 1;
      public static final int bLeft = 2;
      public static final int bRight = 3;
-<<<<<<< HEAD
+     public static final int slot = 13;
      
-     // SOlenoids:
+     // Solenoids:
      public static final int clawPistonExtend = 0;
      public static final int clawPistonRetract = 1;
-=======
-     public static final int slot = 13;
->>>>>>> origin/master
-    
 }
