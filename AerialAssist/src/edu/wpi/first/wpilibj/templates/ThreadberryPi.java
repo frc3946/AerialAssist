@@ -17,21 +17,21 @@ public class ThreadberryPi extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
-        setDefaultCommand(new PrintThreadPiData());
+//        setDefaultCommand(new PrintThreadPiData());
     }
     
     /**
      * Start getting Data from Pi
      */
     public void startPi() {
-        raspberryPi.start();
+//        raspberryPi.start();
     }
     
     /**
      * Stop getting Data from Pi
      */
     public void stopPi() {
-        raspberryPi.stop();
+//        raspberryPi.stop();
     }
     
     /**
@@ -83,9 +83,10 @@ public class ThreadberryPi extends Subsystem {
      */
     public ThreadberryPi() {
         super();
-        raspberryPi = new ThreadPi();
-// 
-       startPi();
+//        raspberryPi = new ThreadPi();
+//        startPi();
+    }
+}
 //        System.out.println(this.getClass().getName()+" Initialized");/*
 // * To change this template, choose Tools | Templates
 // * and open the template in the editor.
@@ -96,7 +97,3 @@ public class ThreadberryPi extends Subsystem {
  *
  * @author AJ
  */
-public class ThreadberryPi {
-    
-
-}

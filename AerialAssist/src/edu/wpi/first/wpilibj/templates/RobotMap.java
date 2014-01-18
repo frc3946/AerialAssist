@@ -9,11 +9,14 @@ package edu.wpi.first.wpilibj.templates;
 public class RobotMap {
     public static int clawTopWheel;
     
-     public static final int clawPistonExtend = 1;
-     public static final int clawPistonRetract = 2;
+     // Sidecar:
      public static final int fLeft = 0;
      public static final int fRight = 1;
      public static final int bLeft = 2;
      public static final int bRight = 3;
+     
+     // SOlenoids:
+     public static final int clawPistonExtend = 0;
+     public static final int clawPistonRetract = 1;
     
 }
