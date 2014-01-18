@@ -6,10 +6,11 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Gyro;
-import edu.wpi.first.wpilibj.Jaguar;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.templates.RobotMap;
 
 /**
  *
@@ -17,12 +18,12 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class DriveTrain extends Subsystem {
 
-    private Jaguar frontLeft = new Jaguar(0);
-    private Jaguar frontRight = new Jaguar(1);
-    private Jaguar backLeft = new Jaguar(2);
-    private Jaguar backRight = new Jaguar(3);
-    private RobotDrive drive = new RobotDrive(frontLeft, backLeft, frontRight, frontLeft);
-    private Gyro gyro = new Gyro(13);
+    private Talon frontLeft = new Talon(RobotMap.fLeft);
+    private Talon frontRight = new Talon(RobotMap.fRight);
+    private Talon backLeft = new Talon(RobotMap.bLeft);
+    private Talon backRight = new Talon(RobotMap.bRight);
+    private RobotDrive drive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
+    private Gyro gyro = new Gyro(RobotMap.gyro);
     
     protected void initDefaultCommand() {
         
