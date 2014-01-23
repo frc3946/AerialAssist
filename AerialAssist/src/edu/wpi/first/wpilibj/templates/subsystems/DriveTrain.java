@@ -10,7 +10,9 @@ import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.templates.OI;
 import edu.wpi.first.wpilibj.templates.RobotMap;
+import edu.wpi.first.wpilibj.templates.commands.MecanumDrive;
 
 /**
  *
@@ -24,16 +26,20 @@ public class DriveTrain extends Subsystem {
     private Talon backRight = new Talon(RobotMap.bRight);
     private RobotDrive drive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
     private Gyro gyro = new Gyro(RobotMap.gyro);
+    OI oi = new OI();
     
     protected void initDefaultCommand() {
-        
+        MecanumDrive mecanumDrive = new MecanumDrive();
+                                  
+                             
+      
     }
     
     private double angle = gyro.getAngle();
            
-    public void mecanumDrive(GenericHID move, Joystick.AxisType rotate) {
+    public void mecanumDrive(GenericHID.Hand move, Joystick.AxisType rotate) {
         
-        drive.mecanumDrive_Cartesian(move.getX(), move.getY(), rotate.value, 0);
+        drive.mecanumDrive_Cartesian(oi.getXbox().getX(move) , oi.getXbox().getY(move), rotate.value, gyro.getAngle());
         frontLeft.set(10);
         
         

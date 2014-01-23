@@ -2,6 +2,7 @@
 package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Joystick.AxisType;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.templates.commands.*;
@@ -42,7 +43,7 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
-//    private XboxController xbox;
+    private XboxController xbox;
     private Joystick genius;
     
     private Button launchFrisbee;
@@ -63,9 +64,23 @@ public class OI {
     private Button adjustRight;
     private Button adjustDown;
     
+    private XboxController.AxisType leftY = XboxController.AxisType.kLeftY;
+    private XboxController.AxisType rightY = XboxController.AxisType.kRightY;
+    private XboxController.AxisType leftX = XboxController.AxisType.kLeftX;
+    private XboxController.AxisType rightX = XboxController.AxisType.kRightX;
+    private XboxController.AxisType Trigger = XboxController.AxisType.kTrigger;
+    private XboxController.AxisType dLeftRight = XboxController.AxisType.kDLeftRight;
+    
+    public XboxController getXbox() {
+        return xbox;
+    }
+    
+    
+    
+    
     
     public OI() {
-        
+        xbox = new XboxController(RobotMap.xboxController);
     }
 }/*
  * To change this template, choose Tools | Templates

@@ -4,43 +4,47 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
-import edu.wpi.first.wpilibj.templates.subsystems.ClawPiston;
+import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.templates.subsystems.ClawWheels;
 
 
+    // Called once after isFinished returns true
 /**
  *
  * @author OpalStone
  */
 public class EjectBall extends CommandBase {
-    ClawPiston clawPiston = new ClawPiston();
-    public EjectBall() {
+    ClawWheels clawWheels = new ClawWheels();
+    
+    public EjectBall () {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires (clawPiston);
+        requires (clawWheels);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+         System.out.println("PushOutBall");
     }
 
-    // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        clawPiston.extend();
+        clawWheels.set(Relay.Value.kReverse);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+            return false;
+        }
+
+    protected void end() {
+        clawWheels.set (Relay.Value.kOff);
     }
 
-    // Called once after isFinished returns true
-    protected void end() {
-        clawPiston.stop();
-    }
+   
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-        end();
+        clawWheels.set(Relay.Value.kOff);
     }
 }
