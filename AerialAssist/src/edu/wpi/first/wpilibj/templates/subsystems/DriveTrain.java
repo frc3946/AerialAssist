@@ -26,21 +26,22 @@ public class DriveTrain extends Subsystem {
     private Talon backRight = new Talon(RobotMap.bRight);
     private RobotDrive drive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
     private Gyro gyro = new Gyro(RobotMap.gyro);
-    OI oi = new OI();
+    OI oi = new OI(); //todo: this is incorrect. Do no acces any oi inside subsystems. 
     
     protected void initDefaultCommand() {
+        //todo: use setDefaultCommand(new MecanumDrive());
         MecanumDrive mecanumDrive = new MecanumDrive();
-                                  
-                             
-      
     }
     
     private double angle = gyro.getAngle();
-           
+   
+    //todo:
+    //this function should take x,y and a rotation, then pass that to the  mecanumDrive_Cartesian
+    //function allong with the gyro
     public void mecanumDrive(GenericHID.Hand move, Joystick.AxisType rotate) {
         
         drive.mecanumDrive_Cartesian(oi.getXbox().getX(move) , oi.getXbox().getY(move), rotate.value, gyro.getAngle());
-        frontLeft.set(10);
+        frontLeft.set(10);//todo: oops?
         
         
         
