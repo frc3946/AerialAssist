@@ -29,10 +29,10 @@ public class DriveTrain extends Subsystem {
     
     protected void initDefaultCommand() {
         setDefaultCommand(new MecanumDrive());
-        MecanumDrive mecanumDrive = new MecanumDrive();
+        MecanumDrive mecanumDrive = new MecanumDrive();  //todo: remove this line. What does it do?
     }
    
-    //todo:   COMPLETE?
+    //todo:  
     //this function should take x,y and a rotation, then pass that to the  mecanumDrive_Cartesian
     //function allong with the gyro
     public void mecanumDrive(double x, double y, double rotation) {
