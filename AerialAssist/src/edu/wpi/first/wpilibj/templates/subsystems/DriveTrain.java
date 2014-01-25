@@ -20,30 +20,22 @@ import edu.wpi.first.wpilibj.templates.commands.MecanumDrive;
  */
 public class DriveTrain extends Subsystem {
 
-    private Talon frontLeft = new Talon(RobotMap.fLeft);
-    private Talon frontRight = new Talon(RobotMap.fRight);
-    private Talon backLeft = new Talon(RobotMap.bLeft);
-    private Talon backRight = new Talon(RobotMap.bRight);
-    private RobotDrive drive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
-    private Gyro gyro = new Gyro(RobotMap.gyro);
-    OI oi = new OI(); //todo: this is incorrect. Do no acces any oi inside subsystems. 
+    private final Talon frontLeft = new Talon(RobotMap.fLeft);
+    private final Talon frontRight = new Talon(RobotMap.fRight);
+    private final Talon backLeft = new Talon(RobotMap.bLeft);
+    private final Talon backRight = new Talon(RobotMap.bRight);
+    private final RobotDrive drive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
+    private final Gyro gyro = new Gyro(RobotMap.gyro);
     
     protected void initDefaultCommand() {
-        //todo: use setDefaultCommand(new MecanumDrive());
+        setDefaultCommand(new MecanumDrive());
         MecanumDrive mecanumDrive = new MecanumDrive();
     }
-    
-    private double angle = gyro.getAngle();
    
-    //todo:
+    //todo:   COMPLETE?
     //this function should take x,y and a rotation, then pass that to the  mecanumDrive_Cartesian
     //function allong with the gyro
-    public void mecanumDrive(GenericHID.Hand move, Joystick.AxisType rotate) {
-        
-        drive.mecanumDrive_Cartesian(oi.getXbox().getX(move) , oi.getXbox().getY(move), rotate.value, gyro.getAngle());
-        frontLeft.set(10);//todo: oops?
-        
-        
-        
+    public void mecanumDrive(double x, double y, double rotation) {
+        drive.mecanumDrive_Cartesian(x, y, rotation, gyro.getAngle());
     }
 }
