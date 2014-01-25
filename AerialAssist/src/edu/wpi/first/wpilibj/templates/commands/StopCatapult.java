@@ -3,23 +3,16 @@
  * and open the template in the editor.
  */
 package edu.wpi.first.wpilibj.templates.commands;
-
-import edu.wpi.first.wpilibj.Relay;
-import edu.wpi.first.wpilibj.templates.subsystems.CatapultMotor;
 /**
  *
  * @author OpalStone
  */
 public class StopCatapult extends CommandBase {
-    
-    
-    CatapultMotor catapult = new CatapultMotor();
    
     public StopCatapult() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         requires(catapult);
-      
     }
 
     // Called just before this Command runs the first time

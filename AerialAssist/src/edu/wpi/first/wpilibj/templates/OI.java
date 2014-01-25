@@ -44,45 +44,18 @@ public class OI {
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
     private XboxController xbox;
-    private Joystick genius;
     
-    private Button launchFrisbee;
-    private Button loadFrisbee;
-//    private Button firePiston;
-    private Button TopClimbingPiston;
-    private Button BottomClimbingPiston;
-    private Button fender;
-//    private Button Climb;
-    private Button pitchFore;
-    private Button pitchAft;
-    private Button StopMotors;
-    private Button AutoAim;
-    private Button debug;
+    private Button exCommand;
     
-    private Button adjustUp;
-    private Button adjustLeft;
-    private Button adjustRight;
-    private Button adjustDown;
-    
-    private XboxController.AxisType leftY = XboxController.AxisType.kLeftY;
-    private XboxController.AxisType rightY = XboxController.AxisType.kRightY;
-    private XboxController.AxisType leftX = XboxController.AxisType.kLeftX;
-    private XboxController.AxisType rightX = XboxController.AxisType.kRightX;
-    private XboxController.AxisType Trigger = XboxController.AxisType.kTrigger;
-    private XboxController.AxisType dLeftRight = XboxController.AxisType.kDLeftRight;
+    public void OI() {
+        xbox = new XboxController(RobotMap.xboxController);
+        
+        exCommand = new JoystickButton(xbox, RobotMap.testDrive);
+        
+        exCommand.toggleWhenPressed(new ExampleCommand());
+    }
     
     public XboxController getXbox() {
         return xbox;
     }
-    
-    
-    
-    
-    
-    public OI() {
-        xbox = new XboxController(RobotMap.xboxController);
-    }
-}/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+}

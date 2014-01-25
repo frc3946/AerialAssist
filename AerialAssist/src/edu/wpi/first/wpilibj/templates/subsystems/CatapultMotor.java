@@ -4,30 +4,28 @@
  */
 package edu.wpi.first.wpilibj.templates.subsystems;
 
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.commands.StopCatapult;
 
 /**
  *
  * @author Caden
  */public class CatapultMotor extends Subsystem{
-    Talon catapultMotor = new Talon(RobotMap.catapult);            
+//    Talon catapultMotor = new Talon(RobotMap.catapult);            
     private double speed;
-       
+    
+    protected void initDefaultCommand() {
+        setDefaultCommand(new StopCatapult());
+    }
+    
     public void launchBall() {
-        catapultMotor.set(speed);
+//        catapultMotor.set(speed);
     }
     public void loadBall(){
-        catapultMotor.set(-speed);
+//        catapultMotor.set(-speed);
     }
     public void stopBall(){
-        catapultMotor.stopMotor();
-    }
-
-    protected void initDefaultCommand() {
-        new StopCatapult();
+//        catapultMotor.stopMotor();
     }
 }
 

@@ -3,6 +3,7 @@ package edu.wpi.first.wpilibj.templates.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.templates.OI;
 import edu.wpi.first.wpilibj.templates.subsystems.*;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The base for all commands. All atomic commands should subclass CommandBase.
@@ -14,7 +15,6 @@ public abstract class CommandBase extends Command {
 
     public static OI oi;
     public static DriveTrain driveTrain = new DriveTrain();
-    // Create a single static instance of all of your subsystems
     public static CatapultMotor catapult = new CatapultMotor();
 
     public static void init() {
@@ -26,7 +26,8 @@ public abstract class CommandBase extends Command {
         oi = new OI();
 
         // Show what command your subsystem is running on the SmartDashboard
-//        SmartDashboard.putData();
+        SmartDashboard.putData(driveTrain);
+        SmartDashboard.putData(catapult);
     }
 
     public CommandBase(String name) {

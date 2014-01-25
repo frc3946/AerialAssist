@@ -4,13 +4,11 @@
  */
 package edu.wpi.first.wpilibj.templates.subsystems;
 
-import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.templates.OI;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.commands.MecanumDrive;
 
@@ -20,7 +18,7 @@ import edu.wpi.first.wpilibj.templates.commands.MecanumDrive;
  */
 public class DriveTrain extends Subsystem {
 
-    private final Talon frontLeft = new Talon(RobotMap.fLeft);
+    public final Talon frontLeft = new Talon(RobotMap.fLeft);
     private final Talon frontRight = new Talon(RobotMap.fRight);
     private final Talon backLeft = new Talon(RobotMap.bLeft);
     private final Talon backRight = new Talon(RobotMap.bRight);
@@ -29,13 +27,26 @@ public class DriveTrain extends Subsystem {
     
     protected void initDefaultCommand() {
         setDefaultCommand(new MecanumDrive());
-        MecanumDrive mecanumDrive = new MecanumDrive();  //todo: remove this line. What does it do?
     }
-   
-     
+    
+    public DriveTrain(){
+        super();
+        System.out.println(this.getClass().getName()+" Initialized");
+        drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+        drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+    }
+    
     //this function should take x,y and a rotation, then pass that to the  mecanumDrive_Cartesian
     //function allong with the gyro
     public void mecanumDrive(double x, double y, double rotation) {
-        drive.mecanumDrive_Cartesian(x, y, rotation, gyro.getAngle());
+        drive.mecanumDrive_Cartesian(.7*x, .7*y, .7*rotation, gyro.getAngle());
+        System.out.println("[DT] X : " + x);
+        System.out.println("[DT] Y : " + y);
+        System.out.println("[DT] Theta : " + rotation);
+        System.out.println("[DT] Gyro : " + gyro.getAngle());
+        SmartDashboard.putNumber("[DT] X", x);
+        SmartDashboard.putNumber("[DT] Y", y);
+        SmartDashboard.putNumber("[DT] Theta", rotation);
+        SmartDashboard.putNumber("[DT] Gyro", gyro.getAngle());
     }
 }
