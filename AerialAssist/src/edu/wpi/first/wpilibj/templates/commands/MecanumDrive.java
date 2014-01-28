@@ -23,16 +23,17 @@ public class MecanumDrive extends CommandBase {
     protected void execute() {
         //here we already have to access the io object. 
         //read the up/down and left/right from io.
-        //then pass those values to the mecanum drive function. 
-        driveTrain.mecanumDrive(oi.getXbox().getX(GenericHID.Hand.kLeft),
-                                oi.getXbox().getY(GenericHID.Hand.kLeft),
-                                oi.getXbox().getThrottle());
+        //then pass those values to the mecanum drive function.
         System.out.println("[MC] X" + oi.getXbox().getX(GenericHID.Hand.kLeft));
         System.out.println("[MC] Y" + oi.getXbox().getY(GenericHID.Hand.kLeft));
         System.out.println("[MC] Theta" + oi.getXbox().getThrottle());
         SmartDashboard.putNumber("[MC] X", oi.getXbox().getX(GenericHID.Hand.kLeft));
         SmartDashboard.putNumber("[MC] Y", oi.getXbox().getY(GenericHID.Hand.kLeft));
         SmartDashboard.putNumber("[MC] Theta", oi.getXbox().getThrottle());
+        driveTrain.mecanumDrive(oi.getXbox().getX(GenericHID.Hand.kLeft),
+                                oi.getXbox().getY(GenericHID.Hand.kLeft),
+                                oi.getXbox().getThrottle(),
+                                gyro.getAngle());
     }
 
     protected boolean isFinished() {

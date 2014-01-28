@@ -47,9 +47,14 @@ public class OI {
     
     private Button exCommand;
     
-    public void OI() {
+    public OI() {
         xbox = new XboxController(RobotMap.xboxController);
         
+        if (xbox == null){
+            System.out.println("Bad Xbox");
+        }else{
+            System.out.println("Xbox Okay");
+        }
         exCommand = new JoystickButton(xbox, RobotMap.testDrive);
         
         exCommand.toggleWhenPressed(new ExampleCommand());

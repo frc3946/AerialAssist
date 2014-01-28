@@ -10,7 +10,7 @@ public class ExampleCommand extends CommandBase {
     public ExampleCommand() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(driveTrain);
+        //requires(driveTrain);
     }
 
     // Called just before this Command runs the first time
@@ -21,12 +21,12 @@ public class ExampleCommand extends CommandBase {
     protected void execute() {
         setTimeout(3);
         while(!isTimedOut()){
-            driveTrain.mecanumDrive(0, 1, 0);
+            //driveTrain.mecanumDrive(0, 1, 0);
         }
-        driveTrain.mecanumDrive(0, -.7, 0);
+        //driveTrain.mecanumDrive(0, -.7, 0);
         setTimeout(3);
         while(!isTimedOut()){
-            driveTrain.mecanumDrive(0, -.7, 0);
+            //driveTrain.mecanumDrive(0, -.7, 0);
         }
 //        setTimeout(3);
 //        while(!isTimedOut()){

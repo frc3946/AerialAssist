@@ -12,7 +12,7 @@ public class EjectBall extends CommandBase {
     public EjectBall () {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires (catapult);
+        //requires (catapult);
     }
 
     // Called just before this Command runs the first time
@@ -21,7 +21,7 @@ public class EjectBall extends CommandBase {
     }
 
     protected void execute() {
-        catapult.launchBall();
+        //catapult.launchBall();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -30,7 +30,7 @@ public class EjectBall extends CommandBase {
         }
 
     protected void end() {
-        catapult.stopBall();
+        //catapult.stopBall();
     }
 
    

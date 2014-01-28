@@ -12,7 +12,7 @@ public class StopCatapult extends CommandBase {
     public StopCatapult() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(catapult);
+        //requires(catapult);
     }
 
     // Called just before this Command runs the first time
@@ -31,7 +31,7 @@ public class StopCatapult extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
-        catapult.stopBall();
+        //catapult.stopBall();
     }
 
     // Called when another command which requires one or more of the same
