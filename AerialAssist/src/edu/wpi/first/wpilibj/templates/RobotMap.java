@@ -7,9 +7,20 @@ package edu.wpi.first.wpilibj.templates;
  * floating around.
  */
 public class RobotMap {
-    public static int clawTopWheel;
     
-     public static final int clawPistonExtend = 1;
-     public static final int clawPistonRetract = 2;
-    
+     // Sidecar:
+     public static final int fRight = 2;
+     public static final int bLeft = 4;
+     public static final int bRight = 3;
+     public static final int fLeft = 1;
+//     public static final int catapult = 5;
+     
+     // Solenoids:
+          
+     // Analog:
+     public static final int gyro = 1;
+     
+     public static final int xboxController = 1;
+     public static final int testDrive = XboxController.ButtonType.kB.value;
+     
 }

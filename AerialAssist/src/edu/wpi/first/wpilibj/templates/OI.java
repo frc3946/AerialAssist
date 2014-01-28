@@ -1,8 +1,11 @@
 
 package edu.wpi.first.wpilibj.templates;
 
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.Joystick.AxisType;
 import edu.wpi.first.wpilibj.buttons.Button;
-import edu.wpi.first.wpilibj.buttons.DigitalIOButton;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.templates.commands.*;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -34,11 +37,25 @@ public class OI {
     // button.whenPressed(new ExampleCommand());
     
     // Run the command while the button is being held down and interrupt it once
-    // the button is released.
+    // the button is released
     // button.whileHeld(new ExampleCommand());
     
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
+    private XboxController xbox;
+    
+    private Button exCommand;
+    
+    public void OI() {
+        xbox = new XboxController(RobotMap.xboxController);
+        
+        exCommand = new JoystickButton(xbox, RobotMap.testDrive);
+        
+        exCommand.toggleWhenPressed(new ExampleCommand());
+    }
+    
+    public XboxController getXbox() {
+        return xbox;
+    }
 }
-
