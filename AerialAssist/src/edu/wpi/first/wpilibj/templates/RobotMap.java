@@ -15,6 +15,8 @@ public class RobotMap {
      public static final int fLeft = 1;
      public static final int bootMotor1 = 5;
      public static final int bootMotor2 = 6;
+     public static final int loadArm = 7;
+     public static final int loadFingers = 8;
      
 //     p public static final intublic static final int catapult = 5;
 

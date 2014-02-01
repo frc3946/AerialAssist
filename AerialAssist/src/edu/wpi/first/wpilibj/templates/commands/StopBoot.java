@@ -39,6 +39,6 @@ public class StopBoot extends CommandBase {
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-        System.out.println("StopClawWheels interrupted");
+        System.out.println("StopBoot interrupted");
     }
 }
