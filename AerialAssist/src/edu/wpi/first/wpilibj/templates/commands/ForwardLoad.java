@@ -7,7 +7,7 @@ package edu.wpi.first.wpilibj.templates.commands;
 
 /**
  *
- * @author nrladmin
+ * @author Seth
  */
 public class ForwardLoad extends CommandBase {
     
