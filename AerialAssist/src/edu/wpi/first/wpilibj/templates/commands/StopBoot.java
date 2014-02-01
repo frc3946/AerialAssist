@@ -7,9 +7,10 @@ package edu.wpi.first.wpilibj.templates.commands;
  *
  * @author OpalStone
  */
-public class StopCatapult extends CommandBase {
+public class StopBoot extends CommandBase {
    
-    public StopCatapult() {
+    public StopBoot() {
+        requires(boot);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
         //requires(catapult);
@@ -22,6 +23,7 @@ public class StopCatapult extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        boot.stopKick();
     }
 
     // Make this return true when this Command no longer needs to run execute()

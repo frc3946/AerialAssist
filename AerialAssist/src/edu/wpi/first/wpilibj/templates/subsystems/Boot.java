@@ -35,4 +35,8 @@ public class Boot extends Subsystem {
        victor2.set(1.0);
        
     }
+    public void stopKick(){
+        victor1.set(0.0);
+        victor2.set(0.0);
+    }
 }

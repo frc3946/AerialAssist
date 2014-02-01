@@ -5,7 +5,7 @@
 package edu.wpi.first.wpilibj.templates.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.templates.commands.StopCatapult;
+import edu.wpi.first.wpilibj.templates.commands.StopBoot;
 
 /**
  *
@@ -15,7 +15,7 @@ import edu.wpi.first.wpilibj.templates.commands.StopCatapult;
     private double speed;
     
     protected void initDefaultCommand() {
-        setDefaultCommand(new StopCatapult());
+        setDefaultCommand(new StopBoot());
     }
     
     public void launchBall() {
