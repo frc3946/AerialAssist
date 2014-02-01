@@ -8,12 +8,15 @@ package edu.wpi.first.wpilibj.templates;
  */
 public class RobotMap {
     
-     // Sidecar:
+     // PWM:
      public static final int fRight = 2;
      public static final int bLeft = 4;
      public static final int bRight = 3;
      public static final int fLeft = 1;
-//     public static final int catapult = 5;
+     public static final int bootMotor1 = 5;
+     public static final int bootMotor2 = 6;
+     
+//     p public static final intublic static final int catapult = 5;
 
      // Solenoids:
           

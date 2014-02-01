@@ -16,8 +16,8 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
  */
 public class Boot extends Subsystem {
     
-    //private static final Victor victor1 = new Victor(RobotMap.motor1);
-    //private static final Victor victor2 = new Victor(RobotMap.motor2);
+    private static final Victor victor1 = new Victor(RobotMap.bootMotor1);
+    private static final Victor victor2 = new Victor(RobotMap.bootMotor2);
     
     protected void initDefaultCommand() {
         
@@ -25,9 +25,14 @@ public class Boot extends Subsystem {
     
     public void kickBall(){
         
-       // victor1.set(1.0);
-       //victor2.set(-1.0);
-        
+       victor1.set(1.0);
+       victor2.set(-1.0);
+       
     }
-
+    public void retractBall(){
+        
+       victor1.set(-1.0);
+       victor2.set(1.0);
+       
+    }
 }

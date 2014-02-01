@@ -17,6 +17,7 @@ public abstract class CommandBase extends Command {
 
     public static OI oi;
     public static DriveTrain driveTrain = new DriveTrain();
+    public static Boot boot = new Boot();
     public static Gyro gyro = new Gyro(RobotMap.gyro);
 //   public static CatapultMotor catapult = new CatapultMotor();
 

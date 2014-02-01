@@ -13,18 +13,23 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  * @author OpalStone
  */
-    class KickBall extends Command {
-        
+    class KickBall extends CommandBase {
+        static boolean retracting;
     public KickBall(){
     }
     
     protected void initialize(){
-        Robot.motor1.kickBall();
-        Robot.motor2.kickBall();
-        end();
+        requires(boot);
+        boot.retractBall();
+        setTimeout(1);
+        retracting == true 
+        
     }
     
     protected void execute(){
+        if (isTimeout() == true){
+            boot.kickBall();
+        }
     }
     
     protected boolean isFinished(){
