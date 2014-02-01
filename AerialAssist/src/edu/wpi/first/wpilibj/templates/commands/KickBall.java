@@ -22,8 +22,7 @@ import edu.wpi.first.wpilibj.command.Command;
         requires(boot);
         boot.retractBall();
         setTimeout(1);
-        retracting == true 
-        
+        retracting = true;
     }
     
     protected void execute(){
