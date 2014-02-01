@@ -7,6 +7,9 @@ package edu.wpi.first.wpilibj.templates.commands;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+
+
+
 /**
  *
  * @author AJ
@@ -17,7 +20,7 @@ public class MecanumDrive extends CommandBase {
         requires(driveTrain);
     }
     
-    protected void initialize() {
+    protected void initialize(){
     }
 
     protected void execute() {
@@ -30,8 +33,17 @@ public class MecanumDrive extends CommandBase {
         SmartDashboard.putNumber("[MC] X", oi.getXbox().getX(GenericHID.Hand.kLeft));
         SmartDashboard.putNumber("[MC] Y", oi.getXbox().getY(GenericHID.Hand.kLeft));
         SmartDashboard.putNumber("[MC] Theta", oi.getXbox().getThrottle());
-        driveTrain.mecanumDrive(oi.getXbox().getX(GenericHID.Hand.kLeft),
-                                oi.getXbox().getY(GenericHID.Hand.kLeft),
+        double X = oi.getXbox().getX(GenericHID.Hand.kLeft);
+        if (java.lang.Math.abs(X) <= 0.15) {
+            X = 0.0;
+        } else {
+        }
+        double Y = oi.getXbox().getY(GenericHID.Hand.kLeft);
+        if (java.lang.Math.abs(Y) <= 0.15) {
+            Y = 0.0;
+        }
+        driveTrain.mecanumDrive(X,
+                                Y,
                                 oi.getXbox().getThrottle(),
                                 gyro.getAngle());
     }
