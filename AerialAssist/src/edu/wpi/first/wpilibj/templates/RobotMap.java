@@ -14,7 +14,7 @@ public class RobotMap {
      public static final int bRight = 3;
      public static final int fLeft = 1;
 //     public static final int catapult = 5;
-     
+
      // Solenoids:
           
      // Analog:
