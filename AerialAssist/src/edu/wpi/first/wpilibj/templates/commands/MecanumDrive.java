@@ -15,7 +15,13 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * @author AJ
  */
 public class MecanumDrive extends CommandBase {
-
+    double X;
+    double Y;
+    double throttle;
+    double xOld;
+    double yOld;
+    double throttleOld;
+    
     public MecanumDrive() {
         requires(driveTrain);
     }
@@ -31,30 +37,38 @@ public class MecanumDrive extends CommandBase {
         SmartDashboard.putNumber("[MC] X", oi.getXbox().getX(GenericHID.Hand.kLeft));
         SmartDashboard.putNumber("[MC] Y", oi.getXbox().getY(GenericHID.Hand.kLeft));
         SmartDashboard.putNumber("[MC] Theta", oi.getXbox().getThrottle());
-        double X = oi.getXbox().getX(GenericHID.Hand.kLeft);
+        X = oi.getXbox().getX(GenericHID.Hand.kLeft);
         if (java.lang.Math.abs(X) <= 0.25) {
             X = 0.0;
         } else {
         }
-        double Y = oi.getXbox().getY(GenericHID.Hand.kLeft);
+        Y = oi.getXbox().getY(GenericHID.Hand.kLeft);
         if (java.lang.Math.abs(Y) <= 0.25) {
             Y = 0.0;
         }
-       
-        double throttle = oi.getXbox().getThrottle();
+        throttle = oi.getXbox().getThrottle();
         if (java.lang.Math.abs(throttle) <= 0.25) {
             throttle = 0.0;          
         }
-        driveTrain.mecanumDrive(X,
-                                Y,
-                                throttle,
+        
+        for(double i = 0; i < 10.0*(X-xOld) &&
+                          i < 10.0*(Y-yOld) &&
+                          i < 10.0*(throttle-throttleOld); i++) {
+        driveTrain.mecanumDrive(i*(X-xOld)/10.0,
+                                i*(Y-yOld)/10.0,
+                                i*(throttle-throttleOld)/10.0,
                                 gyro.getAngle());
         System.out.println("[MC] X" + X);
         System.out.println("[MC] Y" + Y);
         System.out.println("[MC] Theta" + throttle);
+        }
+        
     }
 
     protected boolean isFinished() {
+        xOld = X;
+        yOld = Y;
+        throttleOld = throttle;
         return false;
     }
 
