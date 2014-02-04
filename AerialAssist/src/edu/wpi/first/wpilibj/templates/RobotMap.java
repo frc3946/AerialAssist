@@ -26,6 +26,9 @@ public class RobotMap {
      public static final int gyro = 1;
      
      public static final int xboxController = 1;
-     public static final int testDrive = XboxController.ButtonType.kB.value;
-     
+     public static final int kickBall = XboxController.ButtonType.kX.value;
+     public static final int raiseArm = XboxController.ButtonType.kL.value;
+     public static final int lowerArm = XboxController.ButtonType.kR.value;
+     public static final int grabBall = XboxController.ButtonType.kY.value;
+     public static final int releaseBall = XboxController.ButtonType.kA.value;
 }

@@ -35,7 +35,10 @@ public class KickBall extends CommandGroup {
             setTimeout(1.5);
             addSequential(new HammerForward());
             if (isTimedOut()) {
-                addSequential(new StopBoot());
+                setTimeout (1.2);
+                addSequential(new HammerReverse());
+                if (isTimedOut())
+                   addSequential(new StopBoot());
             }
         }
     }

@@ -45,19 +45,36 @@ public class OI {
     // button.whenReleased(new ExampleCommand());
     private XboxController xbox;
     
-    private Button exCommand;
+    private Button kickBall;
+    private Button takeBall;
+    private Button lowerArm;
+    private Button loadBall;
+    private Button launchBall;
+    private Button leaveBall;
     
     public OI() {
         xbox = new XboxController(RobotMap.xboxController);
         
-        if (xbox == null){
-            System.out.println("Bad Xbox");
-        }else{
-            System.out.println("Xbox Okay");
-        }
-        exCommand = new JoystickButton(xbox, RobotMap.testDrive);
+//        if (xbox == null){
+//            System.out.println("Bad Xbox");
+//        }else{
+//            System.out.println("Xbox Okay");
+//        }
         
-        exCommand.toggleWhenPressed(new ExampleCommand());
+        
+        kickBall = new JoystickButton(xbox, RobotMap.kickBall);
+        loadBall = new JoystickButton(xbox, RobotMap.grabBall);
+        leaveBall = new JoystickButton(xbox, RobotMap.releaseBall);
+        takeBall = new JoystickButton(xbox, RobotMap.raiseArm);
+        lowerArm = new JoystickButton(xbox, RobotMap.lowerArm);
+        
+        
+        kickBall.whenPressed(new KickBall());
+        loadBall.whileHeld(new ForwardLoad());
+        leaveBall.whileHeld(new ReverseLoad());
+        takeBall.whileHeld(new StowArm());
+        lowerArm.whileHeld(new LowerArm());
+        
     }
     
     public XboxController getXbox() {
