@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.templates.commands.StopBoot;
  
     
     protected void initDefaultCommand() {
-        setDefaultCommand(new StopBoot());
+  
     }
     
     public void forwardLoad() {
