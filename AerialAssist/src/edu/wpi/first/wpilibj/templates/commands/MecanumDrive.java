@@ -51,21 +51,25 @@ public class MecanumDrive extends CommandBase {
             throttle = 0.0;          
         }
         
-        for(double i = 1; i < 10.0*(X-xOld) &&
-                          i < 10.0*(Y-yOld) &&
-                          i < 10.0*(throttle-throttleOld) &&
-                          isTimedOut(); i++) {
-            setTimeout(.02);
-//            driveTrain.mecanumDrive(X, Y, throttle, gyro.getAngle());
-            driveTrain.mecanumDrive(i*(X-xOld)/10.0,
-                                    i*(Y-yOld)/10.0,
-                                    i*(throttle-throttleOld)/10.0,
-                                gyro.getAngle());
-            System.out.println("[MC] X " + X);
-            System.out.println("[MC] Y " + Y);
-            System.out.println("[MC] Theta " + throttle);
-        }
-        
+//        for(double i = 1.0; i < 10.0*(X-xOld) &&
+//                            i < 10.0*(Y-yOld) &&
+//                            i < 10.0*(throttle-throttleOld); i += 1.0) {
+//            setTimeout(.02);
+//            while(!isTimedOut()){
+//                driveTrain.mecanumDrive(i*(X-xOld)/10.0,
+//                                        i*(Y-yOld)/10.0,
+//                                        i*(throttle-throttleOld)/10.0,
+//                                        gyro.getAngle());
+//            }
+            driveTrain.mecanumDrive(X, Y, throttle, gyro.getAngle());
+//            driveTrain.mecanumDrive(i*(X-xOld)/10.0,
+//                                    i*(Y-yOld)/10.0,
+//                                    i*(throttle-throttleOld)/10.0,
+//                                    gyro.getAngle());
+//        }
+        System.out.println("[MC] X " + X);
+        System.out.println("[MC] Y " + Y);
+        System.out.println("[MC] Theta " + throttle);
     }
 
     protected boolean isFinished() {
