@@ -32,3 +32,4 @@ public class RobotMap {
      public static final int grabBall = XboxController.ButtonType.kY.value;
      public static final int releaseBall = XboxController.ButtonType.kA.value;
 }
+
