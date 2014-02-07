@@ -9,11 +9,11 @@ package edu.wpi.first.wpilibj.templates.commands;
  *
  * @author nrladmin
  */
-public class AutoShoot extends CommandBase {
+public class AutoAimLeft extends CommandBase {
     
-    public AutoShoot() {
+    public AutoAimLeft() {
         // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        requires(driveTrain);
     }
 
     // Called just before this Command runs the first time

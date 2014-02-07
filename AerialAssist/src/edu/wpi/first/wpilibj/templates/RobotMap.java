@@ -24,6 +24,7 @@ public class RobotMap {
           
      // Analog:
      public static final int gyro = 1;
+     public static final int knob = 2;
      
      public static final int xboxController = 1;
      public static final int kickBall = XboxController.ButtonType.kX.value;
