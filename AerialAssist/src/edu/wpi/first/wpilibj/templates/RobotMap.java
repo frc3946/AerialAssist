@@ -40,6 +40,7 @@ public class RobotMap {
      public static final int lowerArm = XboxController.ButtonType.kR.value;
      public static final int grabBall = XboxController.ButtonType.kY.value;
      public static final int releaseBall = XboxController.ButtonType.kA.value;
+     public static final int autoAim = XboxController.ButtonType.kB.value;
      
 }
 

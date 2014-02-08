@@ -51,6 +51,7 @@ public class OI {
     private Button loadBall;
     private Button launchBall;
     private Button leaveBall;
+    private Button autoAim;
     
     public OI() {
         xbox = new XboxController(RobotMap.xboxController);
@@ -67,6 +68,7 @@ public class OI {
         leaveBall = new JoystickButton(xbox, RobotMap.releaseBall);
         takeBall = new JoystickButton(xbox, RobotMap.raiseArm);
         lowerArm = new JoystickButton(xbox, RobotMap.lowerArm);
+        autoAim = new JoystickButton(xbox, RobotMap.autoAim);
         
         
         kickBall.whenPressed(new KickBall());
@@ -74,7 +76,7 @@ public class OI {
         leaveBall.whileHeld(new ReverseLoad());
         takeBall.whileHeld(new StowArm());
         lowerArm.whileHeld(new LowerArm());
-        
+        autoAim.whenPressed(new TeleopAutoAim());
     }
     
     public XboxController getXbox() {
