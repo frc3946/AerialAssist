@@ -29,17 +29,10 @@ public class KickBall extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-        setTimeout(.3);
-        addSequential(new HammerReverse());
-        if (isTimedOut()) {
-            setTimeout(1.5);
-            addSequential(new HammerForward());
-            if (isTimedOut()) {
-                setTimeout (1.2);
-                addSequential(new HammerReverse());
-                if (isTimedOut())
-                   addSequential(new StopBoot());
-            }
-        }
+        System.out.println("KickBall");
+        addSequential(new HammerReverse(.3));
+        addSequential(new HammerForward(1.5));
+        addSequential(new HammerReverse(1.2));
+        addSequential(new StopBoot());
     }
 }

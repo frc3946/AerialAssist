@@ -9,19 +9,27 @@ package edu.wpi.first.wpilibj.templates;
 public class RobotMap {
     
      // PWM:
-     public static final int fRight = 2;
-     public static final int bLeft = 4;
-     public static final int bRight = 3;
      public static final int fLeft = 1;
+     public static final int fRight = 2;
+     public static final int bRight = 3;
+     public static final int bLeft = 4;
      public static final int bootMotor1 = 5;
      public static final int bootMotor2 = 6;
      public static final int loadArm = 7;
      public static final int loadFingers = 8;
      
-//     p public static final intublic static final int catapult = 5;
-
+     // Relays
+     public static final int compressor = 1;
+     public static final int compressorRelay = 2;
+     
      // Solenoids:
-          
+     public static final int armHigh = 1;
+     public static final int armLow = 2;
+     public static final int stopArm = 3;
+     
+     // Digital:
+     public static final int pressureSwitch = 1;
+     
      // Analog:
      public static final int gyro = 1;
      public static final int knob = 2;
@@ -32,5 +40,6 @@ public class RobotMap {
      public static final int lowerArm = XboxController.ButtonType.kR.value;
      public static final int grabBall = XboxController.ButtonType.kY.value;
      public static final int releaseBall = XboxController.ButtonType.kA.value;
+     
 }
 

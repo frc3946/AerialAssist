@@ -40,7 +40,8 @@ public class RaspberryPi {
     public static class DataKeeper {
         private static int m_distance = 0; //data we are getting from the connection,
         private static int m_offset = 0;  //you can change to fit your purposes
-        
+        private static String m_found;
+        private static String m_hot;
         private static double m_time = 0; //when the last report was filed
         private static boolean m_report = false;  //if a report was filed previously
         
@@ -62,6 +63,14 @@ public class RaspberryPi {
             SmartDashboard.putNumber("PiTime", m_time);
         }
         
+        public static synchronized void setFound(String found) {
+            m_found = found;
+            SmartDashboard.putString("PiFound", m_found);
+        }
+        public static synchronized void setHot(String hot) {
+            m_hot = hot;
+            SmartDashboard.putString("PiHot",m_hot);
+        }
         public static synchronized boolean getReport() {
             return m_report;
         }
@@ -75,6 +84,12 @@ public class RaspberryPi {
         public static synchronized double getTime() {
             return m_time;
         }
+        public static synchronized String getFound() {
+            return m_found;
+        }
+        public static synchronized String getHot() {
+            return m_hot;
+        }
     }
     
     /**
@@ -82,8 +97,10 @@ public class RaspberryPi {
      */
     private class RaspberryPiThread extends Thread {
         RaspberryPi m_raspberryPi;
+        public String hot;
         public int distance;
         public int offset;
+        public String found;
         public double time;
         private boolean report;
         
@@ -104,12 +121,14 @@ public class RaspberryPi {
                         try {
                             String[] data = m_raspberryPi.tokenizeData(m_raspberryPi.getRawData()); //Get and examine Data
                             time = Timer.getFPGATimestamp(); //Timestamp used to check if data was updated from outside thread (through DataKeeper)
-                            if(data.length < 2) { //Error Check
+                            if(data.length < 4) { //Error Check
                                 report = false; //If a remote was made
                             } else {
                                 try {
-                                    distance = Integer.parseInt(data[1]); //Get data and parse it to proper data types
-                                    offset = Integer.parseInt(data[0]);
+                                    distance = Integer.parseInt(data[2]); //Get data and parse it to proper data types
+                                    offset = Integer.parseInt(data[1]);
+                                    found = data[0];
+                                    hot = data[3];
                                 } catch(NumberFormatException ex) {
                                     report = false;
                                 }
@@ -123,6 +142,8 @@ public class RaspberryPi {
                             DataKeeper.setDistance(distance);
                             DataKeeper.setOffset(offset);
                             DataKeeper.setTime(time);
+                            DataKeeper.setFound(found);
+                            DataKeeper.setHot(hot);
                         }
                     } else {
                         try {

@@ -4,17 +4,20 @@
  */
 package edu.wpi.first.wpilibj.templates.subsystems;
 
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Relay;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
-import edu.wpi.first.wpilibj.templates.commands.StopBoot;
 
 /**
  *
  * @author Caden
- */public class LoadingArm extends Subsystem{      
-    public Relay elbow = new Relay(RobotMap.loadArm);
+ */
+    public class LoadingArm extends Subsystem{
     public Relay fingers = new Relay(RobotMap.loadFingers);
+    private DoubleSolenoid armDirection = new DoubleSolenoid(RobotMap.armHigh, RobotMap.armLow);
+    private Solenoid armStop = new Solenoid(RobotMap.stopArm);
  
     
     protected void initDefaultCommand() {
@@ -31,13 +34,14 @@ import edu.wpi.first.wpilibj.templates.commands.StopBoot;
         fingers.set(Relay.Value.kOff);
     }
     public void lowerArm() {
-        elbow.set(Relay.Value.kReverse);
+        armDirection.set(DoubleSolenoid.Value.kReverse);
     }
     public void stowArm() {
-        elbow.set(Relay.Value.kForward);
+        armDirection.set(DoubleSolenoid.Value.kForward);
     }
     public void stopArm() {
-        elbow.set(Relay.Value.kOff);
+        armDirection.set(DoubleSolenoid.Value.kOff);
+        armStop.set(true);
     }
 }
 

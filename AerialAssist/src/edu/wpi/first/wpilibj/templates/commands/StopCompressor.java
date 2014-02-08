@@ -1,40 +1,31 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
 /**
  *
- * @author nrladmin
+ * @author Gustave Michel
  */
-public class HammerReverse extends CommandBase {
-    double timeOut;
+public class StopCompressor extends CommandBase {
     
-    public HammerReverse(double timeout) {
+    public StopCompressor() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(boot);
-        timeOut = timeout;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        System.out.println("HammerReverse");
-        setTimeout(timeOut);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        while(!isTimedOut()) {
-            boot.retractBall();
-        }
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+        return false;
     }
 
     // Called once after isFinished returns true
