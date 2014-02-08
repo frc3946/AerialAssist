@@ -2,18 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/nrladmin/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/subsystems/Boot.java</file>
-            <file>file:/C:/Users/nrladmin/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/AutoShoot.java</file>
-            <file>file:/C:/Users/nrladmin/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/AutoDrive.java</file>
-            <file>file:/C:/Users/nrladmin/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/RobotMap.java</file>
-            <file>file:/C:/Users/nrladmin/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/MecanumDrive.java</file>
-            <file>file:/C:/Users/nrladmin/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/Autonomous.java</file>
-            <file>file:/C:/Users/nrladmin/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/StopBoot.java</file>
-            <file>file:/C:/Users/nrladmin/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/subsystems/LoadingArm.java</file>
-            <file>file:/C:/Users/nrladmin/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/CommandBase.java</file>
-            <file>file:/C:/Users/nrladmin/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/OI.java</file>
-            <file>file:/C:/Users/nrladmin/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/subsystems/DriveTrain.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

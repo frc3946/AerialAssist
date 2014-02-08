@@ -5,28 +5,49 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
+import edu.wpi.first.wpilibj.templates.ThreadberryPi;
 /**
  *
  * @author nrladmin
  */
-public class AutoAimRight extends CommandBase {
+public class TeleopAutoAim extends CommandBase {
+    ThreadberryPi pi;
+    int distance;
+    int offset;
     
-    public AutoAimRight() {
+    public TeleopAutoAim() {
         // Use requires() here to declare subsystem dependencies
         requires(driveTrain);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        pi = new ThreadberryPi();
+        distance = 0;
+        offset = 0;
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        distance = pi.getDistance();
+        offset = pi.getOffset();
+        if(Math.abs(offset) >= 15){
+            driveTrain.mecanumDrive(0, 0, offset/240, gyro.getAngle());
+        } else if(Math.abs(distance-12000)>= 250){
+            driveTrain.mecanumDrive((distance-12000)*Math.cos(gyro.getAngle()),
+                                    (distance-12000)*Math.sin(gyro.getAngle()),
+                                    0, gyro.getAngle());
+        }
+            
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        if(Math.abs(offset) <= 15 && Math.abs(distance-12000)<= 250){
+            return true;
+        } else{
+            return false;
+        }
     }
 
     // Called once after isFinished returns true
