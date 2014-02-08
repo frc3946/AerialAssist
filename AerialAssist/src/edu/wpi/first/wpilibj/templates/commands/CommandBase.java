@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
 public abstract class CommandBase extends Command {
 
     public static OI oi;
+    public static Compressor compressor = new Compressor();
     public static DriveTrain driveTrain = new DriveTrain();
     public static Boot boot = new Boot();
     public static Gyro gyro = new Gyro(RobotMap.gyro);
@@ -33,6 +34,9 @@ public abstract class CommandBase extends Command {
         gyro.reset();
         // Show what command your subsystem is running on the SmartDashboard
         SmartDashboard.putData(driveTrain);
+        SmartDashboard.putData(compressor);
+        SmartDashboard.putData(boot);
+        SmartDashboard.putData(loadingArm);
         //SmartDashboard.putData(catapult);
     }
 

@@ -14,6 +14,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
 import edu.wpi.first.wpilibj.templates.commands.ExampleCommand;
+import edu.wpi.first.wpilibj.templates.commands.StartCompressor;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,6 +27,7 @@ import edu.wpi.first.wpilibj.templates.commands.ExampleCommand;
 public class RobotTemplate extends IterativeRobot {
 
     Command autonomousCommand;
+    Command compressor;
 
     /**
      * This function is run when the robot is first started up and should be
