@@ -36,6 +36,7 @@ public class RobotTemplate extends IterativeRobot {
     public void robotInit() {
         // instantiate the command used for the autonomous period
         autonomousCommand = new ExampleCommand();
+        compressor = new StartCompressor();
 
         // Initialize all subsystems
         CommandBase.init();
@@ -44,6 +45,7 @@ public class RobotTemplate extends IterativeRobot {
     public void autonomousInit() {
         // schedule the autonomous command (example)
         autonomousCommand.start();
+        compressor.start();
     }
 
     /**
@@ -59,6 +61,7 @@ public class RobotTemplate extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         autonomousCommand.cancel();
+        compressor.start();
     }
 
     /**

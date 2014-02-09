@@ -61,9 +61,6 @@ public class MecanumDrive extends CommandBase {
 //            setTimeout(.4);
 //            while(!isTimedOut()){
         driveTrain.mecanumDrive(X, Y, throttle, gyro.getAngle());
-//                System.out.println("[MC] X " + X);
-//                System.out.println("[MC] Y " + Y);
-//                System.out.println("[MC] Theta " + throttle);
 //            }
 //        }
     }

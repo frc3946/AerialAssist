@@ -26,13 +26,13 @@ public class Boot extends Subsystem {
     
     public void kickBall(){
         System.out.println("Boot Kicking");
-        bootMotor.set(-1.0);
-        bootMotor2.set(-1.0);
+        bootMotor.set(1.0);
+        bootMotor2.set(1.0);
     }
     public void retractBall(){
         System.out.println("Boot Retracting");
-        bootMotor.set(1.0);
-        bootMotor2.set(1.0);
+        bootMotor.set(-1.0);
+        bootMotor2.set(-1.0);
     }
     public void stopKick(){
         System.out.println("Boot Stop");

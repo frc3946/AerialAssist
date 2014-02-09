@@ -34,9 +34,11 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
         fingers.set(Relay.Value.kOff);
     }
     public void lowerArm() {
+        armStop.set(false);
         armDirection.set(DoubleSolenoid.Value.kReverse);
     }
     public void stowArm() {
+        armStop.set(false);
         armDirection.set(DoubleSolenoid.Value.kForward);
     }
     public void stopArm() {
