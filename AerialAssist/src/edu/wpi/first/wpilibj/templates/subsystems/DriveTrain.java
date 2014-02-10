@@ -7,6 +7,7 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.commands.MecanumDrive;
 
@@ -40,10 +41,10 @@ public class DriveTrain extends Subsystem {
 //        System.out.println("[DT] Y : " + y);
 //        System.out.println("[DT] Theta : " + rotation);
 //        System.out.println("[DT] Gyro : " + gyro);
-//        SmartDashboard.putNumber("[DT] X", x);
-//        SmartDashboard.putNumber("[DT] Y", y);
-//        SmartDashboard.putNumber("[DT] Theta", rotation);
-//        SmartDashboard.putNumber("[DT] Gyro", gyro);
+        SmartDashboard.putNumber("[DT] X", x);
+        SmartDashboard.putNumber("[DT] Y", y);
+        SmartDashboard.putNumber("[DT] Theta", rotation);
+        SmartDashboard.putNumber("[DT] Gyro", gyro);
         drive.mecanumDrive_Cartesian(.7*x, .7*y, .7*rotation, gyro);
     }
 }
