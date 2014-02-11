@@ -4,6 +4,7 @@
  */
 package edu.wpi.first.wpilibj.templates.subsystems;
 
+import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.templates.RobotMap;
@@ -32,6 +33,10 @@ public class Compressor extends Subsystem {
     public void stop() {
         System.out.println("Compressor Stopped");
         compressor.stop();
+    }
+    
+    public void testCompressor() {
+        compressor.setRelayValue(Relay.Value.kForward);
     }
     
     public Compressor() {

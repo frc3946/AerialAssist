@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.parsing.IInputOutput;
  */
 public class Controller extends GenericHID implements IInputOutput {
     
-    private final DriverStation m_ds;
+    private DriverStation m_ds;
     private final int m_port;
     
     /**
