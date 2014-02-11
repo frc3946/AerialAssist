@@ -33,9 +33,9 @@ public class TeleopAutoAim extends CommandBase {
         offset = pi.getOffset();
         if(Math.abs(offset) >= 15){
             driveTrain.mecanumDrive(0, 0, offset/240, gyro.getAngle());
-        } else if(Math.abs(distance-12000)>= 250){
-            driveTrain.mecanumDrive((distance-12000)*Math.cos(gyro.getAngle()),
-                                    (distance-12000)*Math.sin(gyro.getAngle()),
+        } else if(Math.abs(distance-11000)>= 250){
+            driveTrain.mecanumDrive((distance-11000)*Math.cos(gyro.getAngle()),
+                                    (distance-11000)*Math.sin(gyro.getAngle()),
                                     0, gyro.getAngle());
         }
             
@@ -43,7 +43,7 @@ public class TeleopAutoAim extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(Math.abs(offset) <= 15 && Math.abs(distance-12000)<= 250){
+        if(Math.abs(offset) <= 15 && Math.abs(distance-11000)<= 250){
             return true;
         } else{
             return false;
