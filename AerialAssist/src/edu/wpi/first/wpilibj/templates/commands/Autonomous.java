@@ -32,13 +32,12 @@ public class Autonomous extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
         
-        //I need to read the knob to determine which direction to auto aim.
-        //Version 1 (Drive First)
+        //Read knob to determine which direction to auto aim.
         AnalogChannel knob;
         knob = new AnalogChannel(RobotMap.knob);
         int knobValue = knob.getValue();
         System.out.println("knobValue = " + knobValue);
-        
+  
         //Lower arm.
         addParallel (new LowerArm());
         
@@ -50,21 +49,9 @@ public class Autonomous extends CommandGroup {
               addSequential (new AutoAimLeft());
         }else if(knobValue >= 60000){
               addSequential (new AutoAimRight());
-        }else{
-              //addSequential (new AutoAimCenter());
         }
 
         //Run KickBall to shoot
-        addSequential (new KickBall());
-        
-        //Version 2 (Han Solo)
-        
-        //addParallel (new LowerArm);
-        
-        //addSequential (new AutoAimLeft());
-        
-        //addSequential (new KickBall());
-        
-        //addSequential (new AutoDrive());
+        addSequential (new KickBall());        
     }
 }
