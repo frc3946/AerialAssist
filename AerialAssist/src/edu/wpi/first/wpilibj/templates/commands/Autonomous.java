@@ -6,6 +6,7 @@
 package edu.wpi.first.wpilibj.templates.commands;
 
 import edu.wpi.first.wpilibj.AnalogChannel;
+import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 
@@ -31,7 +32,7 @@ public class Autonomous extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-        
+        //RobotDrive.setSafetyEnabled(false);
         //Read knob to determine which direction to auto aim.
         AnalogChannel knob;
         knob = new AnalogChannel(RobotMap.knob);

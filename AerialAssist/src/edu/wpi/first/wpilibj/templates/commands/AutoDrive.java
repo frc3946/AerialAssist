@@ -10,10 +10,11 @@ package edu.wpi.first.wpilibj.templates.commands;
  * @author nrladmin
  */
 public class AutoDrive extends CommandBase {
-    
-    public AutoDrive() {
+    double timeOut;
+    public AutoDrive(double timeout) {
         // Use requires() here to declare subsystem dependencies
         requires(driveTrain);
+        setTimeout(timeout);
     }
 
     // Called just before this Command runs the first time
@@ -22,11 +23,16 @@ public class AutoDrive extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+        driveTrain.mecanumDrive(1, 1, 0, gyro.getAngle());
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        if(isTimedOut()) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     // Called once after isFinished returns true

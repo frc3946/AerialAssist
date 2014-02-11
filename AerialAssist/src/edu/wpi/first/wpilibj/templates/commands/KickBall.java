@@ -31,8 +31,8 @@ public class KickBall extends CommandGroup {
         // arm.
         System.out.println("KickBall");
         addSequential(new HammerReverse(.3));
-        addSequential(new HammerForward(1.5));
-        addSequential(new HammerReverse(1.2));
+        addSequential(new HammerForward(.5));
+        addSequential(new HammerReverse(.3));
         addSequential(new StopBoot());
     }
 }
