@@ -10,12 +10,12 @@ import edu.wpi.first.wpilibj.templates.ThreadberryPi;
  *
  * @author nrladmin
  */
-public class TeleopAutoAim extends CommandBase {
+public class AutoAim extends CommandBase {
     ThreadberryPi pi;
     int distance;
     int offset;
     
-    public TeleopAutoAim() {
+    public AutoAim() {
         // Use requires() here to declare subsystem dependencies
         requires(driveTrain);
     }

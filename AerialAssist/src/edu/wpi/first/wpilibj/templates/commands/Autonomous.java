@@ -43,14 +43,10 @@ public class Autonomous extends CommandGroup {
         addParallel (new LowerArm());
         
         //Move forward slightly. 
-        addSequential (new AutoDrive());
+        addSequential (new AutoDrive(2.5));
         
         //Run AutoAim for up to 4 seconds. 
-        if(knobValue <= 6000){
-              addSequential (new AutoAimLeft());
-        }else if(knobValue >= 60000){
-              addSequential (new AutoAimRight());
-        }
+        addSequential (new AutoAim());
 
         //Run KickBall to shoot
         addSequential (new KickBall());        
