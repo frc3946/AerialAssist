@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Team3946%20GeForce/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/AutoAimLeft.java</file>
+            <file>file:/C:/Users/Team3946%20GeForce/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/TeleopAutoAim.java</file>
+            <file>file:/C:/Users/Team3946%20GeForce/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/AutoDrive.java</file>
+            <file>file:/C:/Users/Team3946%20GeForce/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/AutoAimRight.java</file>
+            <file>file:/C:/Users/Team3946%20GeForce/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/Autonomous.java</file>
+        </group>
     </open-files>
 </project-private>
