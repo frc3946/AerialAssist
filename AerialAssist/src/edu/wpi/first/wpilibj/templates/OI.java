@@ -78,7 +78,7 @@ public class OI {
         raiseArm.whileHeld(new StowArm());
         lowerArm.whileHeld(new LowerArm());
         autoAim.whenPressed(new StartCompressor());
-        testCompressor.whileHeld(new testCompressor());
+//        testCompressor.whenInactive(new testCompressor());
     }
     
     public XboxController getXbox() {

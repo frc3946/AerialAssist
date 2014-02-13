@@ -26,17 +26,11 @@ public class Compressor extends Subsystem {
     }
     
     public void start() {
-        System.out.println("Compressor Running");
         compressor.start();
     }
     
     public void stop() {
-        System.out.println("Compressor Stopped");
         compressor.stop();
-    }
-    
-    public void testCompressor() {
-        compressor.setRelayValue(Relay.Value.kForward);
     }
     
     public Compressor() {

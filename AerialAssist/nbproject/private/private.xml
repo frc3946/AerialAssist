@@ -2,6 +2,14 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/AJ/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/subsystems/LoadingArm.java</file>
+            <file>file:/C:/Users/AJ/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/KickBall.java</file>
+            <file>file:/C:/Users/AJ/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/HammerReverse.java</file>
+            <file>file:/C:/Users/AJ/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/HammerForward.java</file>
+            <file>file:/C:/Users/AJ/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/RobotMap.java</file>
+            <file>file:/C:/Users/AJ/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/subsystems/Boot.java</file>
+            <file>file:/C:/Users/AJ/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/StopBoot.java</file>
+        </group>
     </open-files>
 </project-private>

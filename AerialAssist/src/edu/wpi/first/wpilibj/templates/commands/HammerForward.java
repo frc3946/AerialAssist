@@ -14,10 +14,12 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
  */
 class HammerForward extends CommandBase {
     double timeOut;
+    double speed;
 
-    public HammerForward(double timeout) {
+    public HammerForward(double speed, double timeout) {
         requires(boot);
         timeOut = timeout;
+        this.speed = speed;
     }
 
     protected void initialize() {
@@ -27,7 +29,7 @@ class HammerForward extends CommandBase {
 
     protected void execute() {
         while(!isTimedOut()) {
-            boot.kickBall();
+            boot.kickBall(speed);
         }
     }
 
