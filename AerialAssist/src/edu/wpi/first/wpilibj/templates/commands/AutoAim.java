@@ -10,12 +10,13 @@ import edu.wpi.first.wpilibj.templates.ThreadberryPi;
  *
  * @author nrladmin
  */
-public class TeleopAutoAim extends CommandBase {
+public class AutoAim extends CommandBase {
     ThreadberryPi pi;
     int distance;
     int offset;
+    boolean output;
     
-    public TeleopAutoAim() {
+    public AutoAim() {
         // Use requires() here to declare subsystem dependencies
         requires(driveTrain);
     }
@@ -25,9 +26,11 @@ public class TeleopAutoAim extends CommandBase {
         pi = new ThreadberryPi();
         distance = 0;
         offset = 0;
+        output = false;
     }
 
     // Called repeatedly when this Command is scheduled to run
+    //Numbers subject to change.0
     protected void execute() {
         distance = pi.getDistance();
         offset = pi.getOffset();
@@ -37,17 +40,14 @@ public class TeleopAutoAim extends CommandBase {
             driveTrain.mecanumDrive((distance-11000)*Math.cos(gyro.getAngle()),
                                     (distance-11000)*Math.sin(gyro.getAngle()),
                                     0, gyro.getAngle());
+        } else {
+            output = true;
         }
-            
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(Math.abs(offset) <= 15 && Math.abs(distance-11000)<= 250){
-            return true;
-        } else{
-            return false;
-        }
+        return output;
     }
 
     // Called once after isFinished returns true

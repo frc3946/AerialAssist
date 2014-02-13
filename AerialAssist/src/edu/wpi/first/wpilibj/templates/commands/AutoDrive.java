@@ -23,7 +23,7 @@ public class AutoDrive extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        driveTrain.mecanumDrive(1, 1, 0, gyro.getAngle());
+        driveTrain.mecanumDrive(-1, 0, 0, gyro.getAngle());
     }
 
     // Make this return true when this Command no longer needs to run execute()
