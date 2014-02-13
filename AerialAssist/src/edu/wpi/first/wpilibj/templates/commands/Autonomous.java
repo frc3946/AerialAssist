@@ -6,6 +6,7 @@
 package edu.wpi.first.wpilibj.templates.commands;
 
 import edu.wpi.first.wpilibj.AnalogChannel;
+import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 
@@ -31,7 +32,7 @@ public class Autonomous extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-        
+        //RobotDrive.setSafetyEnabled(false);
         //Read knob to determine which direction to auto aim.
         AnalogChannel knob;
         knob = new AnalogChannel(RobotMap.knob);
@@ -42,14 +43,10 @@ public class Autonomous extends CommandGroup {
         addParallel (new LowerArm());
         
         //Move forward slightly. 
-        addSequential (new AutoDrive());
+        addSequential (new AutoDrive(2.5));
         
         //Run AutoAim for up to 4 seconds. 
-        if(knobValue <= 6000){
-              addSequential (new AutoAimLeft());
-        }else if(knobValue >= 60000){
-              addSequential (new AutoAimRight());
-        }
+        addSequential (new AutoAim());
 
         //Run KickBall to shoot
         addSequential (new KickBall());        
