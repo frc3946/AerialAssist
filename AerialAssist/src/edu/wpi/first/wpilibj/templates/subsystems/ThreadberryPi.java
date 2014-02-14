@@ -1,5 +1,5 @@
 
-package edu.wpi.first.wpilibj.templates;
+package edu.wpi.first.wpilibj.templates.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 //import org.usfirst.frc3946.UltimateAscent.ThreadedPi;
@@ -64,6 +64,14 @@ public class ThreadberryPi extends Subsystem {
      */
     public int getDistance() {
        return raspberryPi.getDistance();
+    }
+    
+    public String getFound() {
+       return raspberryPi.getFound();
+    }
+    
+    public String getHot() {
+       return raspberryPi.getHot();
     }
     
     /**
