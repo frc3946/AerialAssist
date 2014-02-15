@@ -23,9 +23,10 @@ public class RobotMap {
      public static final int compressorRelay = 2;
      
      // Solenoids:
-     public static final int armHigh = 1;
-     public static final int armLow = 2;
-     public static final int stopArm = 3;
+     public static final int pG = 1;
+     public static final int xG = 2;
+     public static final int pW = 3;
+     public static final int xW = 4;
      
      // Digital:
      public static final int pressureSwitch = 1;

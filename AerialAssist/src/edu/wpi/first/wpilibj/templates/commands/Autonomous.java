@@ -33,7 +33,7 @@ public class Autonomous extends CommandGroup {
         // arm.
         
         //I need to read the knob to determine which direction to auto aim.
-        //Version 1 (Drive First)
+        //Option 1 (Drive First)
         AnalogChannel knob;
         knob = new AnalogChannel(RobotMap.knob);
         int knobValue = knob.getValue();
@@ -57,14 +57,6 @@ public class Autonomous extends CommandGroup {
         //Run KickBall to shoot
         addSequential (new KickBall());
         
-        //Version 2 (Han Solo)
-        
-        //addParallel (new LowerArm);
-        
-        //addSequential (new AutoAimLeft());
-        
-        //addSequential (new KickBall());
-        
-        //addSequential (new AutoDrive());
+        //Add a 'Han Solo' version that aims and shoots before moving into the next zone.
     }
 }

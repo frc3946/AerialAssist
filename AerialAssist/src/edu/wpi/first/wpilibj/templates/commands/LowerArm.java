@@ -24,7 +24,7 @@ public class LowerArm extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        loadingArm.forwardLoad();
+        loadingArm.lowerArm();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -34,7 +34,7 @@ public class LowerArm extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
-        loadingArm.lowerArm();
+        loadingArm.stopArm();
     }
 
     // Called when another command which requires one or more of the same

@@ -16,12 +16,12 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
  */
     public class LoadingArm extends Subsystem{
     public Relay fingers = new Relay(RobotMap.loadFingers);
-    private DoubleSolenoid armDirection = new DoubleSolenoid(RobotMap.armHigh, RobotMap.armLow);
-    private Solenoid armStop = new Solenoid(RobotMap.stopArm);
- 
+//    private DoubleSolenoid armDirection = new DoubleSolenoid(RobotMap.pW, RobotMap.xG);
+    private DoubleSolenoid green = new DoubleSolenoid(RobotMap.pG, RobotMap.xG);
+    private DoubleSolenoid white = new DoubleSolenoid(RobotMap.pW, RobotMap.xW);
     
     protected void initDefaultCommand() {
-  
+        stopArm();
     }
     
     public void forwardLoad() {
@@ -34,14 +34,16 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
         fingers.set(Relay.Value.kOff);
     }
     public void lowerArm() {
-        armDirection.set(DoubleSolenoid.Value.kReverse);
+        green.set(DoubleSolenoid.Value.kForward);
+        white.set(DoubleSolenoid.Value.kReverse);
     }
     public void stowArm() {
-        armDirection.set(DoubleSolenoid.Value.kForward);
+        green.set(DoubleSolenoid.Value.kReverse);
+        white.set(DoubleSolenoid.Value.kForward);
     }
-    public void stopArm() {
-        armDirection.set(DoubleSolenoid.Value.kOff);
-        armStop.set(true);
+    public void stopArm(){
+        green.set(DoubleSolenoid.Value.kForward);
+        white.set(DoubleSolenoid.Value.kForward);
     }
 }
 
