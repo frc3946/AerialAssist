@@ -12,13 +12,12 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * @author AJ
  */
 public class AdjustTime extends CommandBase {
-    
     boolean aValue;
     boolean bValue;
     boolean xValue;
     boolean yValue;
     int state;
-    
+
     public AdjustTime() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -26,34 +25,44 @@ public class AdjustTime extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        aValue = !oi.getXbox().getAButton();
-        bValue = !oi.getXbox().getBButton();
-        xValue = !oi.getXbox().getXButton();
-        yValue = !oi.getXbox().getYButton();
+        aValue = oi.getXbox().getAButton();
+        bValue = oi.getXbox().getBButton();
+        xValue = oi.getXbox().getXButton();
+        yValue = oi.getXbox().getYButton();
+        setTimeout(.05);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        if(aValue){
+        if (aValue && isTimedOut()) {
             state++;
-        }else if(yValue){
+        }
+        if (yValue && isTimedOut()) {
             state--;
         }
-        if (state < 0){
+        if (state < 0) {
             state = 0;
-        }else if (state > 5){
+        } else if (state > 5) {
             state = 5;
         }
-        if(xValue){
+        if (xValue && isTimedOut()) {
             KickBall.sequence[1][state] -= 0.05;
-        }else if(bValue){
+        }
+        if (bValue && isTimedOut()) {
             KickBall.sequence[1][state] += 0.05;
+        }
+        if (KickBall.sequence[1][state] < 0) {
+            KickBall.sequence[1][state] = 0;
         }
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+        if (isTimedOut()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     // Called once after isFinished returns true

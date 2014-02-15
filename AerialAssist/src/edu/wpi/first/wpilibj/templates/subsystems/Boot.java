@@ -20,7 +20,7 @@ public class Boot extends Subsystem {
     private static final Victor bootMotor2 = new Victor(RobotMap.bootMotor2);
     
     protected void initDefaultCommand() {
-        
+        kickBall(0);
     }
     
     public void kickBall(double speed){

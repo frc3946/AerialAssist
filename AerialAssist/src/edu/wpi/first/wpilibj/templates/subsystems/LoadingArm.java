@@ -29,12 +29,15 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
     public void forwardLoad() {
         fingers.set(Relay.Value.kReverse);
     }
+    
     public void reverseLoad(){
         fingers.set(Relay.Value.kForward);
     }
+    
     public void stopLoad(){
         fingers.set(Relay.Value.kOff);
     }
+    
     public void lowerArm() {
         System.out.println("Lowering Arm");
         armDirection.set(DoubleSolenoid.Value.kReverse);
@@ -42,6 +45,7 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
 //        armDown.set(true);
         armStop.set(false);                                     //vents
     }
+    
     public void stowArm() {
         System.out.println("Raising Arm");
         armDirection.set(DoubleSolenoid.Value.kForward);
@@ -49,6 +53,7 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
 //        armDown.set(false);
         armStop.set(false);                                     //vents
     }
+    
     public void stopArm() {
         System.out.println("Arm Stopped");
         armStop.set(true);                                      //disables passive vent
