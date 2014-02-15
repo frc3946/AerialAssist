@@ -51,6 +51,6 @@ public class Autonomous extends CommandGroup {
         addSequential (new KickBall());
         
         //Dance
-        //addSequential (new Dance());
+        //addSequential (new Dance(10.0));
     }
 }
