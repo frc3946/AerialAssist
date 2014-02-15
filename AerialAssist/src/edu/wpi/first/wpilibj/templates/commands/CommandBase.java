@@ -21,7 +21,8 @@ public abstract class CommandBase extends Command {
     public static Boot boot = new Boot();
     public static Gyro gyro = new Gyro(RobotMap.gyro);
     public static LoadingArm loadingArm = new LoadingArm();
-    public static ThreadberryPi pi = new ThreadberryPi();
+//    public static RaspberryPi raspberryPi = new RaspberryPi();
+//    public static ThreadedberryPi threadedberryPi = new ThreadedberryPi();
 //   public static CatapultMotor catapult = new CatapultMotor();
 
     public static void init() {
