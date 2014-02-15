@@ -5,7 +5,7 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
-import edu.wpi.first.wpilibj.templates.OI;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -17,7 +17,6 @@ public class AdjustSpeed extends CommandBase {
     boolean bValue;
     boolean xValue;
     boolean yValue;
-    OI OI = new OI();
     int state;
     
     public AdjustSpeed() {
@@ -27,10 +26,10 @@ public class AdjustSpeed extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        aValue = !OI.getXbox().getAButton();
-        bValue = !OI.getXbox().getBButton();
-        xValue = !OI.getXbox().getXButton();
-        yValue = !OI.getXbox().getYButton();
+        aValue = !oi.getXbox().getAButton();
+        bValue = !oi.getXbox().getBButton();
+        xValue = !oi.getXbox().getXButton();
+        yValue = !oi.getXbox().getYButton();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -59,6 +58,7 @@ public class AdjustSpeed extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
+        SmartDashboard.putNumber(String.valueOf(state), KickBall.sequence[0][state]);
         System.out.println("Speed adjusted on" + state + " to " + KickBall.sequence[0][state]);
     }
 
