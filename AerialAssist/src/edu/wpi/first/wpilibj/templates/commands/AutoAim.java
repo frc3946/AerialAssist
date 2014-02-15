@@ -5,7 +5,7 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
-import edu.wpi.first.wpilibj.templates.ThreadberryPi;
+import edu.wpi.first.wpilibj.templates.subsystems.ThreadberryPi;
 /**
  *
  * @author nrladmin

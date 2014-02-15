@@ -24,15 +24,15 @@ public class Boot extends Subsystem {
         
     }
     
-    public void kickBall(){
+    public void kickBall(double speed){
         System.out.println("Boot Kicking");
-        bootMotor.set(1.0);
-        bootMotor2.set(-1.0);
+        bootMotor.set(speed);
+        bootMotor2.set(-speed);
     }
-    public void retractBall(){
+    public void retractBall(double speed){
         System.out.println("Boot Retracting");
-        bootMotor.set(-1.0);
-        bootMotor2.set(1.0);
+        bootMotor.set(-speed);
+        bootMotor2.set(speed);
     }
     public void stopKick(){
         System.out.println("Boot Stop");

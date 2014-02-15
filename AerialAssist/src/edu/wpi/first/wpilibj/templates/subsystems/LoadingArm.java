@@ -17,11 +17,13 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
     public class LoadingArm extends Subsystem{
     public Relay fingers = new Relay(RobotMap.loadFingers);
     private DoubleSolenoid armDirection = new DoubleSolenoid(RobotMap.armHigh, RobotMap.armLow);
+//    private Solenoid armUp = new Solenoid(RobotMap.raiseArm);
+//    private Solenoid armDown = new Solenoid(RobotMap.lowerArm);
     private Solenoid armStop = new Solenoid(RobotMap.stopArm);
  
     
     protected void initDefaultCommand() {
-  
+        stopArm();
     }
     
     public void forwardLoad() {
@@ -34,16 +36,30 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
         fingers.set(Relay.Value.kOff);
     }
     public void lowerArm() {
-        armStop.set(false);
+        System.out.println("Lowering Arm");
         armDirection.set(DoubleSolenoid.Value.kReverse);
+//        armUp.set(false);
+//        armDown.set(true);
+        armStop.set(false);                                     //vents
     }
     public void stowArm() {
-        armStop.set(false);
+        System.out.println("Raising Arm");
         armDirection.set(DoubleSolenoid.Value.kForward);
+//        armUp.set(true);
+//        armDown.set(false);
+        armStop.set(false);                                     //vents
     }
     public void stopArm() {
-        armDirection.set(DoubleSolenoid.Value.kOff);
-        armStop.set(true);
+        System.out.println("Arm Stopped");
+        armStop.set(true);                                      //disables passive vent
+//        armUp.set(true);
+//        armDown.set(true);
+//        armDirection.set(DoubleSolenoid.Value.kOff);
+//        if (armDirection.get() == DoubleSolenoid.Value.kForward) {
+//            armDirection.set(DoubleSolenoid.Value.kReverse);
+//        } else if (armDirection.get() == DoubleSolenoid.Value.kReverse) {
+//            armDirection.set(DoubleSolenoid.Value.kForward);
+//        }
     }
 }
 

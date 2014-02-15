@@ -30,9 +30,11 @@ public class KickBall extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
         System.out.println("KickBall");
-        addSequential(new HammerReverse(.3));
-        addSequential(new HammerForward(.5));
-        addSequential(new HammerReverse(.3));
+        addSequential(new HammerReverse(.5, .268));
+        addSequential(new StopBoot());
+        addSequential(new HammerForward(.6, .2));
+        addSequential(new HammerForward(1, .2));
+        addSequential(new HammerReverse(.5, .2));
         addSequential(new StopBoot());
     }
 }
