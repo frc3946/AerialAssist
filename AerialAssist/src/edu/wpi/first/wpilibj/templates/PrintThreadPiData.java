@@ -26,25 +26,25 @@ public class PrintThreadPiData extends CommandBase {
     // Called just before this Command runs the first time
     protected void initialize() {
         lastTime = 0;
-        if (!pi.isConnected() || !pi.isEnabled()) {
-            pi.startPi();
-        }
+//        if (!pi.isConnected() || !pi.isEnabled()) {
+//            pi.startPi();
+//        }
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        if (pi.getTime() > lastTime) {
-            lastTime = pi.getTime();
-            SmartDashboard.putString("Found", pi.getFound());
-            SmartDashboard.putNumber("Offset", pi.getOffset()); //Print Data to SmartDashboard
-            SmartDashboard.putNumber("Distance", (double) pi.getDistance() / 1000); //Convert from Millifeet to Feet
-            SmartDashboard.putString("Hot", pi.getHot());
-//          SmartDashboard.putDaftPunk("Lucky", pi.getLucky());  
-            System.out.println("Found" + pi.getFound());
-            System.out.println("Offset" + pi.getOffset()); //Print Data to Output
-            System.out.println("Distance" + (double) pi.getDistance() / 1000); //Convert from Millifeet to Feet
-            System.out.println("Hot" + pi.getHot());
-        }
+//        if (pi.getTime() > lastTime) {
+//            lastTime = pi.getTime();
+//            SmartDashboard.putString("Found", pi.getFound());
+//            SmartDashboard.putNumber("Offset", pi.getOffset()); //Print Data to SmartDashboard
+//            SmartDashboard.putNumber("Distance", (double) pi.getDistance() / 1000); //Convert from Millifeet to Feet
+//            SmartDashboard.putString("Hot", pi.getHot());
+////          SmartDashboard.putDaftPunk("Lucky", pi.getLucky());  
+//            System.out.println("Found" + pi.getFound());
+//            System.out.println("Offset" + pi.getOffset()); //Print Data to Output
+//            System.out.println("Distance" + (double) pi.getDistance() / 1000); //Convert from Millifeet to Feet
+//            System.out.println("Hot" + pi.getHot());
+//        }
     }
 
     // Make this return true when this Command no longer needs to run execute()
