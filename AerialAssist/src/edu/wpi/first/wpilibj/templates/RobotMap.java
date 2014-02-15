@@ -39,5 +39,6 @@ public class RobotMap {
      public static final int grabBall = XboxController.ButtonType.kY.value;
      public static final int releaseBall = XboxController.ButtonType.kA.value;
      public static final int autoAim = XboxController.ButtonType.kB.value;
-     public static final int testCompressor = XboxController.ButtonType.kLeftStick.value;
+     public static final int adjustTime = XboxController.ButtonType.kLeftStick.value;
+     public static final int adjustSpeed = XboxController.ButtonType.kRightStick.value;
 }

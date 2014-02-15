@@ -52,7 +52,8 @@ public class OI {
     private Button launchBall;
     private Button leaveBall;
     private Button autoAim;
-    private Button testCompressor;
+    private Button adjustSpeed;
+    private Button adjustTime;
     
     public OI() {
         xbox = new XboxController(RobotMap.xboxController);
@@ -70,7 +71,9 @@ public class OI {
         raiseArm = new JoystickButton(xbox, RobotMap.raiseArm);
         lowerArm = new JoystickButton(xbox, RobotMap.lowerArm);
         autoAim = new JoystickButton(xbox, RobotMap.autoAim);
-        testCompressor = new JoystickButton(xbox, RobotMap.testCompressor);
+        adjustSpeed = new JoystickButton(xbox, RobotMap.adjustSpeed);
+        adjustTime = new JoystickButton(xbox, RobotMap.adjustTime);
+        
         
         kickBall.whenPressed(new KickBall());
         loadBall.whileHeld(new ForwardLoad());
@@ -78,6 +81,8 @@ public class OI {
         raiseArm.whileHeld(new StowArm());
         lowerArm.whileHeld(new LowerArm());
         autoAim.whenPressed(new StartCompressor());
+        adjustSpeed.whileHeld(new AdjustSpeed());
+        adjustTime.whileHeld(new AdjustTime());
 //        testCompressor.whenInactive(new testCompressor());
     }
     

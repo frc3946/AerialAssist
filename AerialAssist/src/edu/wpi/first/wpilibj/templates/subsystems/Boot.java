@@ -6,7 +6,6 @@
 
 package edu.wpi.first.wpilibj.templates.subsystems;
 
-import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
@@ -25,18 +24,8 @@ public class Boot extends Subsystem {
     }
     
     public void kickBall(double speed){
-        System.out.println("Boot Kicking");
         bootMotor.set(speed);
         bootMotor2.set(-speed);
     }
-    public void retractBall(double speed){
-        System.out.println("Boot Retracting");
-        bootMotor.set(-speed);
-        bootMotor2.set(speed);
-    }
-    public void stopKick(){
-        System.out.println("Boot Stop");
-        bootMotor.set(0);
-        bootMotor2.set(0);
-    }
+
 }

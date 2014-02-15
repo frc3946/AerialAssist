@@ -5,32 +5,50 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
+import edu.wpi.first.wpilibj.templates.OI;
+
 /**
  *
- * @author nrladmin
+ * @author AJ
  */
-public class HammerReverse extends CommandBase {
-    double timeOut;
-    double speed;
+public class AdjustTime extends CommandBase {
     
-    public HammerReverse(double speed, double timeout) {
+    boolean aValue;
+    boolean bValue;
+    boolean xValue;
+    boolean yValue;
+    OI OI = new OI();
+    int state;
+    
+    public AdjustTime() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(boot);
-        timeOut = timeout;
-        this.speed = speed;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        System.out.println("HammerReverse");
-        setTimeout(timeOut);
+        aValue = !OI.getXbox().getAButton();
+        bValue = !OI.getXbox().getBButton();
+        xValue = !OI.getXbox().getXButton();
+        yValue = !OI.getXbox().getYButton();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        while(!isTimedOut()) {
-            boot.retractBall(speed);
+        if(aValue){
+            state++;
+        }else if(yValue){
+            state--;
+        }
+        if (state < 0){
+            state = 0;
+        }else if (state > 5){
+            state = 5;
+        }
+        if(xValue){
+            KickBall.sequence[1][state] -= 0.05;
+        }else if(bValue){
+            KickBall.sequence[1][state] += 0.05;
         }
     }
 

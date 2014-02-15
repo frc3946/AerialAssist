@@ -5,12 +5,15 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.subsystems.ThreadberryPi;
 /**
  *
  * @author nrladmin
  */
 public class AutoAim extends CommandBase {
+    private static double distAdjust;
+    private static double centerAdjust;
     ThreadberryPi pi;
     int distance;
     int offset;
@@ -43,6 +46,26 @@ public class AutoAim extends CommandBase {
         } else {
             output = true;
         }
+    }
+ 
+        protected static void aimUp() {
+        distAdjust += 250;
+        SmartDashboard.putNumber("Distance Adjustment", distAdjust);
+    }
+    
+    protected static void aimDown() {
+        distAdjust -= 250;
+        SmartDashboard.putNumber("Distance Adjustment", distAdjust);
+    }
+    
+    protected static void aimLeft() {
+        centerAdjust -= 15;
+        SmartDashboard.putNumber("Windage Adjustment", centerAdjust);
+    }
+    
+    protected static void aimRight() {
+        centerAdjust += 15;
+        SmartDashboard.putNumber("Windage Adjustment", centerAdjust);
     }
 
     // Make this return true when this Command no longer needs to run execute()
