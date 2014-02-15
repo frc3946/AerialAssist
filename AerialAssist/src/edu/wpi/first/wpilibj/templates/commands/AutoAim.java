@@ -6,8 +6,7 @@
 package edu.wpi.first.wpilibj.templates.commands;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-//import edu.wpi.first.wpilibj.templates.CodeMonitor;
-import edu.wpi.first.wpilibj.templates.subsystems.ThreadberryPi;
+import edu.wpi.first.wpilibj.templates.subsystems.ThreadedberryPi;
 /**
  *
  * @author nrladmin
@@ -15,7 +14,7 @@ import edu.wpi.first.wpilibj.templates.subsystems.ThreadberryPi;
 public class AutoAim extends CommandBase {
     private static double distAdjust;
     private static double centerAdjust;
-    ThreadberryPi pi;
+    ThreadedberryPi pi;
     int distance;
     int offset;
     boolean output;
@@ -27,7 +26,7 @@ public class AutoAim extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        pi = new ThreadberryPi();
+        pi = new ThreadedberryPi();
         distance = 0;
         offset = 0;
         output = false;

@@ -14,7 +14,7 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.templates.commands.Autonomous;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
-import edu.wpi.first.wpilibj.templates.commands.PrintThreadPiData;
+//import edu.wpi.first.wpilibj.templates.commands.PrintThreadPiData;
 import edu.wpi.first.wpilibj.templates.commands.StartCompressor;
 
 
@@ -39,7 +39,7 @@ public class RobotTemplate extends IterativeRobot {
         // instantiate the command used for the autonomous period
         autonomousCommand = new Autonomous();
         compressor = new StartCompressor();
-        printPi = new PrintThreadPiData();
+//        printPi = new PrintThreadPiData();
 
         // Initialize all subsystems
         CommandBase.init();

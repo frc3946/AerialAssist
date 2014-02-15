@@ -5,13 +5,11 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
-//import edu.wpi.first.wpilibj.templates.CodeMonitor;
-
 /**
  *
  * @author OpalStone
  */
-class MoveBoot extends CommandBase {
+public class MoveBoot extends CommandBase {
     double timeOut;
     double speed;
 
@@ -23,17 +21,14 @@ class MoveBoot extends CommandBase {
 
     protected void initialize() {
         setTimeout(timeOut);
+        boot.kickBall(speed);
     }
 
     protected void execute() {
-        while(!isTimedOut()) {
-            System.out.println("Hammer at " + speed + " during stage " + KickBall.i);
-            boot.kickBall(speed);
-        }
     }
 
     protected boolean isFinished() {
-        return true;
+        return isTimedOut();
     }
 
     protected void end() {
