@@ -21,9 +21,10 @@ public class RobotMap {
      public static final int loadFingers = 2;
      
      // Solenoids:
-     public static final int armHigh = 1;
-     public static final int armLow = 2;
-     public static final int stopArm = 3;
+     public static final int pG = 1;
+     public static final int xG = 2;
+     public static final int pW = 3;
+     public static final int xW = 4;
      
      // Digital:
      public static final int pressureSwitch = 1;
@@ -39,6 +40,6 @@ public class RobotMap {
      public static final int grabBall = XboxController.ButtonType.kY.value;
      public static final int releaseBall = XboxController.ButtonType.kA.value;
      public static final int autoAim = XboxController.ButtonType.kB.value;
-     public static final int adjustTime = XboxController.ButtonType.kLeftStick.value;
-     public static final int adjustSpeed = XboxController.ButtonType.kRightStick.value;
+     public static final int adjustSpeed = XboxController.ButtonType.kLeftStick.value;
+     public static final int adjustTime = XboxController.ButtonType.kRightStick.value;
 }
