@@ -48,6 +48,9 @@ public class Autonomous extends CommandGroup {
         addSequential (new AutoAim());
 
         //Run KickBall to shoot
-        addSequential (new KickBall());        
+        addSequential (new KickBall());
+        
+        //Dance
+        //addSequential (new Dance(10.0));
     }
 }
