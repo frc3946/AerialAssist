@@ -7,29 +7,23 @@ package edu.wpi.first.wpilibj.templates.commands;
 
 /**
  *
- * @author nrladmin
+ * @author AJ
  */
-public class HammerReverse extends CommandBase {
-    double timeOut;
+public class testCompressor extends CommandBase {
     
-    public HammerReverse(double timeout) {
+    public testCompressor() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(boot);
-        timeOut = timeout;
+        requires(compressor);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        System.out.println("HammerReverse");
-        setTimeout(timeOut);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        while(!isTimedOut()) {
-            boot.retractBall();
-        }
+//        compressor.testCompressor();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -39,6 +33,7 @@ public class HammerReverse extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
+        compressor.stop();
     }
 
     // Called when another command which requires one or more of the same

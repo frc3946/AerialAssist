@@ -4,6 +4,7 @@
  */
 package edu.wpi.first.wpilibj.templates.subsystems;
 
+import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.templates.RobotMap;
@@ -16,7 +17,7 @@ import edu.wpi.first.wpilibj.templates.commands.StartCompressor;
 public class Compressor extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-    private edu.wpi.first.wpilibj.Compressor compressor = new edu.wpi.first.wpilibj.Compressor(RobotMap.pressureSwitch, RobotMap.compressorRelay);
+    edu.wpi.first.wpilibj.Compressor compressor = new edu.wpi.first.wpilibj.Compressor(RobotMap.pressureSwitch, RobotMap.compressor);
     
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.

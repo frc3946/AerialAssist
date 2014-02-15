@@ -5,34 +5,30 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import edu.wpi.first.wpilibj.templates.RobotMap;
-
 /**
  *
  * @author OpalStone
  */
-class HammerForward extends CommandBase {
+public class MoveBoot extends CommandBase {
     double timeOut;
+    double speed;
 
-    public HammerForward(double timeout) {
+    public MoveBoot(double speed, double timeout) {
         requires(boot);
         timeOut = timeout;
+        this.speed = speed;
     }
 
     protected void initialize() {
         setTimeout(timeOut);
-        System.out.println("HammerForward");
+        boot.kickBall(speed);
     }
 
     protected void execute() {
-        while(!isTimedOut()) {
-            boot.kickBall();
-        }
     }
 
     protected boolean isFinished() {
-        return true;
+        return isTimedOut();
     }
 
     protected void end() {

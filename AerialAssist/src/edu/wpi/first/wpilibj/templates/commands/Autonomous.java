@@ -31,32 +31,26 @@ public class Autonomous extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-        
-        //I need to read the knob to determine which direction to auto aim.
-        //Option 1 (Drive First)
+        //RobotDrive.setSafetyEnabled(false);
+        //Read knob to determine which direction to auto aim.
         AnalogChannel knob;
         knob = new AnalogChannel(RobotMap.knob);
         int knobValue = knob.getValue();
         System.out.println("knobValue = " + knobValue);
-        
+  
         //Lower arm.
         addParallel (new LowerArm());
         
         //Move forward slightly. 
-        addSequential (new AutoDrive());
+        addSequential (new AutoDrive(2.5));
         
         //Run AutoAim for up to 4 seconds. 
-        if(knobValue <= 6000){
-              addSequential (new AutoAimLeft());
-        }else if(knobValue >= 60000){
-              addSequential (new AutoAimRight());
-        }else{
-              //addSequential (new AutoAimCenter());
-        }
+        addSequential (new AutoAim());
 
         //Run KickBall to shoot
         addSequential (new KickBall());
         
-        //Add a 'Han Solo' version that aims and shoots before moving into the next zone.
+        //Dance
+        //addSequential (new Dance(10.0));
     }
 }

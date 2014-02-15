@@ -26,16 +26,20 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
     public void forwardLoad() {
         fingers.set(Relay.Value.kReverse);
     }
+    
     public void reverseLoad(){
         fingers.set(Relay.Value.kForward);
     }
+    
     public void stopLoad(){
         fingers.set(Relay.Value.kOff);
     }
+    
     public void lowerArm() {
         green.set(DoubleSolenoid.Value.kForward);
         white.set(DoubleSolenoid.Value.kReverse);
     }
+    
     public void stowArm() {
         green.set(DoubleSolenoid.Value.kReverse);
         white.set(DoubleSolenoid.Value.kForward);
@@ -45,5 +49,3 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
         white.set(DoubleSolenoid.Value.kForward);
     }
 }
-
-

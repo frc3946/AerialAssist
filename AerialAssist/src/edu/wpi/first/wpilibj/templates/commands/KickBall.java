@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  * @author nrladmin
  */
 public class KickBall extends CommandGroup {
+    static double[][] sequence = new double[2][6];
+    static int i;
 
     public KickBall() {
         // Add Commands here:
@@ -29,10 +31,13 @@ public class KickBall extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-        System.out.println("KickBall");
-        addSequential(new HammerReverse(.3));
-        addSequential(new HammerForward(1.5));
-        addSequential(new HammerReverse(1.2));
-        addSequential(new StopBoot());
+//        for(i = 0; i < sequence.length; i++){
+//            System.out.println("KickBall For Loop");
+//            addSequential(new MoveBoot(sequence[0][i], sequence[1][i]));
+//        }
+        addSequential(new MoveBoot(-.5, .268));
+        addSequential(new MoveBoot(-.6, .2));
+        addSequential(new MoveBoot(1, .2));
+        addSequential(new MoveBoot(-.5, .2));
     }
 }

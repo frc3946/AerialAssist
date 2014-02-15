@@ -1,18 +1,21 @@
-
-package edu.wpi.first.wpilibj.templates;
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package edu.wpi.first.wpilibj.templates.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-//import org.usfirst.frc3946.UltimateAscent.ThreadedPi;
-//import org.usfirst.frc3946.UltimateAscent.commands.PrintThreadPiData;
+import edu.wpi.first.wpilibj.templates.ThreadedPi;
+//import edu.wpi.first.wpilibj.templates.commands.PrintThreadPiData;
 
 /**
  *
  * @author Gustave Michel
  */
-public class ThreadberryPi extends Subsystem {
+public class ThreadedberryPi extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-    ThreadberryPi raspberryPi;
+    ThreadedPi raspberryPi;
     
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
@@ -24,14 +27,14 @@ public class ThreadberryPi extends Subsystem {
      * Start getting Data from Pi
      */
     public void startPi() {
-//        raspberryPi.start();
+        raspberryPi.start();
     }
     
     /**
      * Stop getting Data from Pi
      */
     public void stopPi() {
-//        raspberryPi.stop();
+        raspberryPi.stop();
     }
     
     /**
@@ -81,19 +84,10 @@ public class ThreadberryPi extends Subsystem {
     /**
      * Constructor, starts Pi Thread
      */
-    public ThreadberryPi() {
+    public ThreadedberryPi() {
         super();
-//        raspberryPi = new ThreadPi();
-//        startPi();
+        raspberryPi = new ThreadedPi();
+        startPi();
+        System.out.println(this.getClass().getName()+" Initialized");
     }
 }
-//        System.out.println(this.getClass().getName()+" Initialized");/*
-// * To change this template, choose Tools | Templates
-// * and open the template in the editor.
- 
-//package edu.wpi.first.wpilibj.templates;
-
-/**
- *
- * @author AJ
- */

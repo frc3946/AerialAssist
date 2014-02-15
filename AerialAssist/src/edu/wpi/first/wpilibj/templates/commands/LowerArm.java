@@ -11,7 +11,6 @@ package edu.wpi.first.wpilibj.templates.commands;
  */
 public class LowerArm extends CommandBase {
     
-    
     public LowerArm() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
