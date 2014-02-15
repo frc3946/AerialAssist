@@ -28,8 +28,8 @@ public class Boot extends Subsystem {
         System.out.println(this.getClass().getName() + " Initialized");
     }
     public void kickBall(double speed) {
-        bootMotor1.set(speed);
+        bootMotor1.set(-speed);
         System.out.println("THE BOOT MOTORS ARE CURRENTLY BEING SET TO A SPEED OF " + speed);
-        bootMotor2.set(-speed);
+        bootMotor2.set(speed);
     }
 }

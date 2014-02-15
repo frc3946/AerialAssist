@@ -13,8 +13,8 @@ public class RobotMap {
      public static final int fRight = 2;
      public static final int bRight = 3;
      public static final int bLeft = 4;
-     public static final int bootMotor1 = 6;
-     public static final int bootMotor2 = 5;
+     public static final int bootMotor1 = 5;
+     public static final int bootMotor2 = 6;
      
      // Relays
      public static final int compressor = 1;
