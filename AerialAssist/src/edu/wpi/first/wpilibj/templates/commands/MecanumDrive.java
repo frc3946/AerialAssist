@@ -41,16 +41,16 @@ public class MecanumDrive extends CommandBase {
         SmartDashboard.putNumber("[MC] Y", oi.getXbox().getY(GenericHID.Hand.kLeft));
         SmartDashboard.putNumber("[MC] Theta", oi.getXbox().getThrottle());
         X = oi.getXbox().getX(GenericHID.Hand.kLeft);
-        if (java.lang.Math.abs(X) <= 0.25) {
+        if ( Math.abs(X) <= 0.25) {
             X = 0.0;
         } else {
         }
         Y = oi.getXbox().getY(GenericHID.Hand.kLeft);
-        if (java.lang.Math.abs(Y) <= 0.25) {
+        if (Math.abs(Y) <= 0.25) {
             Y = 0.0;
         }
         throttle = oi.getXbox().getThrottle();
-        if (java.lang.Math.abs(throttle) <= 0.25) {
+        if (Math.abs(throttle) <= 0.25) {
             throttle = 0.0;          
         }
 //        
