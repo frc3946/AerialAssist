@@ -23,12 +23,11 @@ class MoveBoot extends CommandBase {
 
     protected void initialize() {
         setTimeout(timeOut);
-        System.out.println("");
-//        CodeMonitor.CodeButtonUpdate(null);
     }
 
     protected void execute() {
         while(!isTimedOut()) {
+            System.out.println("Hammer at " + speed + " during stage " + KickBall.i);
             boot.kickBall(speed);
         }
     }
