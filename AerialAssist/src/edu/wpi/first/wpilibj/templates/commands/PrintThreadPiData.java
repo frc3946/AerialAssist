@@ -5,6 +5,7 @@
 package edu.wpi.first.wpilibj.templates.commands;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+//import edu.wpi.first.wpilibj.templates.CodeMonitor;
 
 /**
  *
@@ -26,6 +27,7 @@ public class PrintThreadPiData extends CommandBase {
         if (!pi.isConnected() || !pi.isEnabled()) {
             pi.startPi();
         }
+//        CodeMonitor.CodeButtonUpdate(null);
     }
 
     // Called repeatedly when this Command is scheduled to run

@@ -5,6 +5,8 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
+//import edu.wpi.first.wpilibj.templates.CodeMonitor;
+
 /**
  *
  * @author OpalStone
@@ -22,6 +24,7 @@ class MoveBoot extends CommandBase {
     protected void initialize() {
         setTimeout(timeOut);
         System.out.println("");
+//        CodeMonitor.CodeButtonUpdate(null);
     }
 
     protected void execute() {

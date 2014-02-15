@@ -34,9 +34,9 @@ public class KickBall extends CommandGroup {
         for(int i = 0; i < sequence.length; i++){
             addSequential(new MoveBoot(sequence[0][i], sequence[1][i]));
         }
-        addSequential(new MoveBoot(.5, .268));
-        addSequential(new MoveBoot(.6, .2));
-        addSequential(new MoveBoot(1, .2));
-        addSequential(new MoveBoot(.5, .2));
+//        addSequential(new MoveBoot(.5, .268));
+//        addSequential(new MoveBoot(.6, .2));
+//        addSequential(new MoveBoot(1, .2));
+//        addSequential(new MoveBoot(.5, .2));
     }
 }

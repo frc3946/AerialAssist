@@ -6,6 +6,7 @@
 package edu.wpi.first.wpilibj.templates.commands;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+//import edu.wpi.first.wpilibj.templates.CodeMonitor;
 import edu.wpi.first.wpilibj.templates.subsystems.ThreadberryPi;
 /**
  *
@@ -30,6 +31,7 @@ public class AutoAim extends CommandBase {
         distance = 0;
         offset = 0;
         output = false;
+//        CodeMonitor.CodeButtonUpdate("B");
     }
 
     // Called repeatedly when this Command is scheduled to run
