@@ -59,7 +59,7 @@ public class AdjustSpeed extends CommandBase {
     // Called once after isFinished returns true
     protected void end() {
         SmartDashboard.putNumber(String.valueOf(state), KickBall.sequence[0][state]);
-        System.out.println("Speed adjusted on" + state + " to " + KickBall.sequence[0][state]);
+        System.out.println("Speed adjusted on " + state + " to " + KickBall.sequence[0][state]);
     }
 
     // Called when another command which requires one or more of the same

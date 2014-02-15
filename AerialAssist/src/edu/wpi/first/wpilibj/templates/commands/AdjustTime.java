@@ -59,7 +59,7 @@ public class AdjustTime extends CommandBase {
     // Called once after isFinished returns true
     protected void end() {
         SmartDashboard.putNumber(String.valueOf(state), KickBall.sequence[1][state]);
-        System.out.println("Time adjusted on" + state + " to " + KickBall.sequence[1][state]);
+        System.out.println("Time adjusted on " + state + " to " + KickBall.sequence[1][state]);
     }
 
     // Called when another command which requires one or more of the same
