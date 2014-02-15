@@ -6,7 +6,6 @@
 package edu.wpi.first.wpilibj.templates.commands;
 
 import edu.wpi.first.wpilibj.AnalogChannel;
-import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.CommandGroup;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 
@@ -49,6 +48,9 @@ public class Autonomous extends CommandGroup {
         addSequential (new AutoAim());
 
         //Run KickBall to shoot
-        addSequential (new KickBall());        
+        addSequential (new KickBall());
+        
+        //Dance
+        //addSequential (new Dance());
     }
 }
