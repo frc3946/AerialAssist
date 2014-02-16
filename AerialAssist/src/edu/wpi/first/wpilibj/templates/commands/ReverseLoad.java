@@ -5,6 +5,8 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
+//import edu.wpi.first.wpilibj.templates.CodeMonitor;
+
 /**
  *
  * @author Seth
@@ -19,6 +21,7 @@ public class ReverseLoad extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+//        CodeMonitor.CodeButtonUpdate("A");
     }
 
     // Called repeatedly when this Command is scheduled to run

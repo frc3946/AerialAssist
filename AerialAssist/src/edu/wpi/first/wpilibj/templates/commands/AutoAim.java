@@ -30,6 +30,7 @@ public class AutoAim extends CommandBase {
         distance = 0;
         offset = 0;
         output = false;
+//        CodeMonitor.CodeButtonUpdate("B");
     }
 
     // Called repeatedly when this Command is scheduled to run
