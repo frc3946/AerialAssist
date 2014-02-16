@@ -74,6 +74,7 @@ public class RobotTemplate extends IterativeRobot {
      */
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        updateStatus();
         LiveWindow.run();
 //        printPi.start();
     }
@@ -90,6 +91,9 @@ public class RobotTemplate extends IterativeRobot {
 
     public void updateStatus() {
         CommandBase.boot.updateStatus();
+//        CommandBase.driveTrain.updateStatus();
+//        CommandBase.loadingArm.updateStatus();
+//        CommandBase.compressor.updateStatus();  
     }
         
 }
