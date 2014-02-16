@@ -25,7 +25,7 @@ public class MoveBoot extends CommandBase {
         setTimeout(timeOut);
         boot.enable();
         boot.setSetpoint(speed);
-        System.out.println("Boot moving.");
+        System.out.println("Boot moving...");
     }
 
     protected void execute() {
@@ -35,7 +35,7 @@ public class MoveBoot extends CommandBase {
         double angleDiff1 = ((boot.angle - tAngle)+360)%360;
         double angleDiff2 = ((tAngle - boot.angle)+360)%360;
         if(Math.min(angleDiff1, angleDiff2) < 30 || isTimedOut()){
-              System.out.println("Boot stopped.");
+              System.out.println("Boot stopped...");
             return true;
         } else {
             return false;
