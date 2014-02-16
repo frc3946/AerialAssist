@@ -8,7 +8,8 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 import edu.wpi.first.wpilibj.AnalogChannel;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.Victor;
-import edu.wpi.first.wpilibj.command.PIDSubsystem;;
+import edu.wpi.first.wpilibj.command.PIDSubsystem;import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 import edu.wpi.first.wpilibj.templates.commands.StopBoot;
 
@@ -78,5 +79,9 @@ public class Boot extends PIDSubsystem {
         this.speed = speed;
         bootMotor1.set(speed);
         bootMotor2.set(-speed);
+    }
+
+    public void updateStatus() {
+        SmartDashboard.putDouble("RPM", rpm);
     }
 }

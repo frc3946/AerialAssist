@@ -49,11 +49,6 @@ public class OI {
     public OI() {
         xbox = new XboxController(RobotMap.xboxController);
 
-//      if (xbox == null){
-//            System.out.println("Bad Xbox");
-//        }else{
-//            System.out.println("Xbox Okay");
-//        }
         kickBall = new JoystickButton(xbox, RobotMap.kickBall);
         loadBall = new JoystickButton(xbox, RobotMap.grabBall);
         leaveBall = new JoystickButton(xbox, RobotMap.releaseBall);
