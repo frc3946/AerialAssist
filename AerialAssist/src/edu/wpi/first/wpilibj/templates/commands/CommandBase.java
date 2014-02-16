@@ -19,6 +19,7 @@ public abstract class CommandBase extends Command {
     public static Compressor compressor = new Compressor();
     public static DriveTrain driveTrain = new DriveTrain();
     public static Boot boot = new Boot();
+    public static PIDBoot pidBoot = new PIDBoot();
     public static Gyro gyro = new Gyro(RobotMap.gyro);
     public static LoadingArm loadingArm = new LoadingArm();
 //    public static RaspberryPi raspberryPi = new RaspberryPi();

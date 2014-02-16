@@ -9,19 +9,18 @@ package edu.wpi.first.wpilibj.templates.commands;
  *
  * @author AJ
  */
-public class StopBoot extends CommandBase {
+public class Delay extends CommandBase {
+    double timeout;
     
-    public StopBoot() {
+    public Delay(double timeout) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(pidBoot);
+        this.timeout = timeout;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        pidBoot.setSetpoint(0);
-        pidBoot.disable();
-        pidBoot.kickBall(0);
+        setTimeout(timeout);
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -30,7 +29,7 @@ public class StopBoot extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return isTimedOut();
     }
 
     // Called once after isFinished returns true
