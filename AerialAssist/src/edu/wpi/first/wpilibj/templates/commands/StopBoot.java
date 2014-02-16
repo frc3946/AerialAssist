@@ -14,14 +14,14 @@ public class StopBoot extends CommandBase {
     public StopBoot() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(pidBoot);
+        requires(boot);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-        pidBoot.setSetpoint(0);
-        pidBoot.disable();
-        pidBoot.kickBall(0);
+        boot.setSetpoint(0);
+        boot.disable();
+        boot.kickBall(0);
     }
 
     // Called repeatedly when this Command is scheduled to run

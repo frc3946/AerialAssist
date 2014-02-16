@@ -10,7 +10,7 @@ package edu.wpi.first.wpilibj.templates.commands;
  * @author Seth
  */
 public class StowArm extends CommandBase {
-    
+
     public StowArm() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);

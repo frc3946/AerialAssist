@@ -15,7 +15,7 @@ public class MoveBoot extends CommandBase {
     double tAngle;
 
     public MoveBoot(double speed, double timeout, double target) {
-        requires(pidBoot);
+        requires(boot);
         timeOut = timeout;
         this.speed = speed;
         tAngle = target;
@@ -23,19 +23,19 @@ public class MoveBoot extends CommandBase {
 
     protected void initialize() {
         setTimeout(timeOut);
-        pidBoot.enable();
-        pidBoot.setSetpoint(speed);
-        System.out.println("Move boot start.");
+        boot.enable();
+        boot.setSetpoint(speed);
+        System.out.println("Boot moving.");
     }
 
     protected void execute() {
     }
 
     protected boolean isFinished() {
-        double angleDiff1 = ((pidBoot.angle - tAngle)+360)%360;
-        double angleDiff2 = ((tAngle - pidBoot.angle)+360)%360;
+        double angleDiff1 = ((boot.angle - tAngle)+360)%360;
+        double angleDiff2 = ((tAngle - boot.angle)+360)%360;
         if(Math.min(angleDiff1, angleDiff2) < 30 || isTimedOut()){
-              System.out.println("Move boot done.");
+              System.out.println("Boot stopped.");
             return true;
         } else {
             return false;
@@ -43,7 +43,7 @@ public class MoveBoot extends CommandBase {
     }
 
     protected void end() {
-        pidBoot.disable();
+        boot.disable();
     }
 
     protected void interrupted() {
