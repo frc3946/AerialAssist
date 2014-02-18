@@ -5,6 +5,8 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 /**
  *
  * @author OpalStone
@@ -29,6 +31,7 @@ public class MoveBoot extends CommandBase {
     }
 
     protected void execute() {
+        SmartDashboard.putNumber("Rotation Sensor", boot.angle);
     }
 
     protected boolean isFinished() {

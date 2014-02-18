@@ -36,9 +36,9 @@ public class KickBall extends CommandGroup {
 //            System.out.println("KickBall For Loop");
 //            addSequential(new MoveBoot(sequence[0][i], sequence[1][i]));
 //        }
-        addSequential(new MoveBoot(-20, 3, 150));
-        addSequential(new MoveBoot(5, .3, 0));
-        addSequential(new MoveBoot(175, .4, 360));
+        addSequential(new MoveBoot(-20, 3, 147));
+//        addSequential(new MoveBoot(5, .3, 0));
+        addSequential(new MoveBoot(1575, 4.4, 205));
 //        addSequential(new MoveBoot(-.4, .15, 0));
 //        addSequential(new MoveBoot(-.25, .1, 0));
 //        addSequential(new MoveBoot(-.12, .05, 0));
