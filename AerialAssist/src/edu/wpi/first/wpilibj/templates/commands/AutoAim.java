@@ -7,18 +7,20 @@ package edu.wpi.first.wpilibj.templates.commands;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.subsystems.ThreadedberryPi;
+
 /**
  *
  * @author nrladmin
  */
 public class AutoAim extends CommandBase {
+
     private static double distAdjust;
     private static double centerAdjust;
     ThreadedberryPi pi;
     int distance;
     int offset;
     boolean output;
-    
+
     public AutoAim() {
         // Use requires() here to declare subsystem dependencies
         requires(driveTrain);
@@ -30,6 +32,7 @@ public class AutoAim extends CommandBase {
         distance = 0;
         offset = 0;
         output = false;
+        setTimeout(3);
 //        CodeMonitor.CodeButtonUpdate("B");
     }
 
@@ -38,32 +41,32 @@ public class AutoAim extends CommandBase {
     protected void execute() {
         distance = pi.getDistance();
         offset = pi.getOffset();
-        if(Math.abs(offset) >= 15){
-            driveTrain.mecanumDrive(0, 0, offset/240, gyro.getAngle());
-        } else if(Math.abs(distance-11000)>= 250){
-            driveTrain.mecanumDrive((distance-11000)*Math.cos(gyro.getAngle()),
-                                    (distance-11000)*Math.sin(gyro.getAngle()),
-                                    0, gyro.getAngle());
+        if (Math.abs(offset) >= 15) {
+            driveTrain.mecanumDrive(0, 0, offset / 240, gyro.getAngle());
+        } else if (Math.abs(distance - 11000) >= 250) {
+            driveTrain.mecanumDrive((distance - 11000) * Math.cos(gyro.getAngle()),
+                    (distance - 11000) * Math.sin(gyro.getAngle()),
+                    0, gyro.getAngle());
         } else {
             output = true;
         }
     }
- 
-        protected static void aimUp() {
+
+    protected static void aimUp() {
         distAdjust += 250;
         SmartDashboard.putNumber("Distance Adjustment", distAdjust);
     }
-    
+
     protected static void aimDown() {
         distAdjust -= 250;
         SmartDashboard.putNumber("Distance Adjustment", distAdjust);
     }
-    
+
     protected static void aimLeft() {
         centerAdjust -= 15;
         SmartDashboard.putNumber("Windage Adjustment", centerAdjust);
     }
-    
+
     protected static void aimRight() {
         centerAdjust += 15;
         SmartDashboard.putNumber("Windage Adjustment", centerAdjust);
@@ -71,7 +74,11 @@ public class AutoAim extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return output;
+        if (isTimedOut()) {
+            return output;
+        } else {
+            return false;
+        }
     }
 
     // Called once after isFinished returns true
