@@ -35,7 +35,7 @@ public class SocketPi {
     
     private SocketConnection client;
     private InputStream is;
-    private OutputStream os;
+    private OutputStream os;    
     
     public static byte[] receiveData;
     private String rawData;
