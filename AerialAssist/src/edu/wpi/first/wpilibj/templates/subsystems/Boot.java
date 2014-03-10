@@ -60,7 +60,7 @@ public class Boot extends PIDSubsystem {
         double angleDiff1 = ((angle - oldAngle) + 360) % 360;
         double angleDiff2 = ((oldAngle - angle) + 360) % 360;
         rpm = (Math.min(angleDiff1, angleDiff2) % 360) / (time - lastTime) / 1000;
-        System.out.println("Angle : " + angle + "\nRPM : " + rpm);
+        System.out.println("Angle : " + (int)angle + "\nRPM : " + (int)rpm);
         oldAngle = angle;
         lastTime = time;
         return rpm;
@@ -72,7 +72,7 @@ public class Boot extends PIDSubsystem {
         if (Math.abs(output) < .25 && output != 0) {
             output = (output / Math.abs(output)) * .25;
         }
-        System.out.println("[Boot] Output : " + output);
+        System.out.println("[Boot] Output :             " + output);
         bootMotor1.set(output);
         bootMotor2.set(-output);
     }

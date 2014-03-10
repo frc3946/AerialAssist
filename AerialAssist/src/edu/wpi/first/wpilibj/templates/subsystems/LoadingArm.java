@@ -36,17 +36,17 @@ public class LoadingArm extends Subsystem {
     }
 
     public void lowerArm() {
-        green.set(DoubleSolenoid.Value.kReverse);
-        white.set(DoubleSolenoid.Value.kForward);
+        green.set(DoubleSolenoid.Value.kForward);       //pressurised
+        white.set(DoubleSolenoid.Value.kReverse);       //exhausted
     }
 
     public void stowArm() {
-        green.set(DoubleSolenoid.Value.kForward);
-        white.set(DoubleSolenoid.Value.kReverse);
+        green.set(DoubleSolenoid.Value.kReverse);       //exhausted
+        white.set(DoubleSolenoid.Value.kForward);       //pressurised
     }
 
     public void stopArm() {
-        green.set(DoubleSolenoid.Value.kReverse);
-        white.set(DoubleSolenoid.Value.kReverse);
+        green.set(DoubleSolenoid.Value.kForward);       //pressurised
+        white.set(DoubleSolenoid.Value.kForward);       //pressurised
     }
 }
