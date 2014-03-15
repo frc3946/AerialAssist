@@ -1,7 +1,9 @@
 package edu.wpi.first.wpilibj.templates;
 
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.InternalButton;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.commands.*;
 
 /**
@@ -43,8 +45,8 @@ public class OI {
     private final Button loadBall;
     private final Button leaveBall;
     private final Button autoAim;
-    private final Button adjustSpeed;
-    private final Button adjustTime;
+    private final InternalButton setKick;
+    private final InternalButton toggleRotation;
 
     public OI() {
         xbox = new XboxController(RobotMap.xboxController);
@@ -55,17 +57,21 @@ public class OI {
         raiseArm = new JoystickButton(xbox, RobotMap.raiseArm);
         lowerArm = new JoystickButton(xbox, RobotMap.lowerArm);
         autoAim = new JoystickButton(xbox, RobotMap.autoAim);
-        adjustSpeed = new JoystickButton(xbox, RobotMap.adjustSpeed);
-        adjustTime = new JoystickButton(xbox, RobotMap.adjustTime);
+        setKick = new InternalButton();
+        toggleRotation = new InternalButton();
 
         kickBall.whenPressed(new KickBall());
         loadBall.whileHeld(new ForwardLoad());
         leaveBall.whileHeld(new ReverseLoad());
         raiseArm.whileHeld(new StowArm());
         lowerArm.whileHeld(new LowerArm());
-        autoAim.whenPressed(new StartCompressor());
-        adjustSpeed.whileHeld(new AdjustSpeed());
-        adjustTime.whileHeld(new AdjustTime());
+//        autoAim.whileHeld(new AutoAim());
+        
+        SmartDashboard.putData("Set Kick", setKick);
+        setKick.whenPressed(new SetKick());
+        SmartDashboard.putData("Toggle Rotation", toggleRotation);
+        toggleRotation.whenPressed(new ToggleRotation());
+        
     }
 
     public XboxController getXbox() {

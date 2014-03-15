@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.RobotMap;
+import edu.wpi.first.wpilibj.templates.commands.KickBall;
 import edu.wpi.first.wpilibj.templates.commands.StopBoot;
 
 /**
@@ -38,6 +39,31 @@ public class Boot extends PIDSubsystem {
     // Initialize your subsystem here
     public Boot() {
         super("Boot", Kp, Ki, Kd);
+        KickBall.sequence[0][0] = -20;
+        KickBall.sequence[0][1] = .7;
+        KickBall.sequence[0][2] = 147;
+        KickBall.sequence[1][0] = 1575;
+        KickBall.sequence[1][1] = .5;
+        KickBall.sequence[1][2] = 205;
+        KickBall.sequence[2][0] = 0;
+        KickBall.sequence[2][1] = 0;
+        KickBall.sequence[2][2] = 0;
+        SmartDashboard.putNumber("Speed 1",  KickBall.sequence[0][0]);
+        SmartDashboard.putNumber("Timeout 1",  KickBall.sequence[0][1]);
+        SmartDashboard.putNumber("Angle 1",  KickBall.sequence[0][2]);
+        
+        SmartDashboard.putNumber("Speed 2",  KickBall.sequence[1][0]);
+        SmartDashboard.putNumber("Timeout 2",  KickBall.sequence[1][1]);
+        SmartDashboard.putNumber("Angle 2",  KickBall.sequence[1][2]);
+        
+        SmartDashboard.putNumber("Speed 3",  KickBall.sequence[2][0]);
+        SmartDashboard.putNumber("Timeout 3",  KickBall.sequence[2][1]);
+        SmartDashboard.putNumber("Angle 3",  KickBall.sequence[2][2]);
+        
+
+        //        addSequential(new MoveBoot(-20, .7, 147));
+//        addSequential(new MoveBoot(1575, .5, 205));
+                
         // Use these to get going:
         // setSetpoint() -  Sets where the PID controller should move the system
         //                  to
