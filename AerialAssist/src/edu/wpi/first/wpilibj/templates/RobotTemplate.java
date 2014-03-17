@@ -45,6 +45,7 @@ public class RobotTemplate extends IterativeRobot {
         // Initialize all subsystems
         CommandBase.init();
         SmartDashboard.putData(Scheduler.getInstance());
+        CommandBase.gyro.reset();
     }
 
     public void autonomousInit() {

@@ -4,6 +4,7 @@
  */
 package edu.wpi.first.wpilibj.templates.subsystems;
 
+import com.sun.squawk.util.MathUtils;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -17,11 +18,12 @@ import edu.wpi.first.wpilibj.templates.commands.MecanumDrive;
  */
 public class DriveTrain extends Subsystem {
 
-    private final Talon frontLeft = new Talon(RobotMap.fLeft);
-    private final Talon frontRight = new Talon(RobotMap.fRight);
-    private final Talon backLeft = new Talon(RobotMap.bLeft);
-    private final Talon backRight = new Talon(RobotMap.bRight);
-    private final RobotDrive drive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
+    public final Talon frontLeft = new Talon(RobotMap.fLeft);
+    public final Talon frontRight = new Talon(RobotMap.fRight);
+    public final Talon backLeft = new Talon(RobotMap.bLeft);
+    public final Talon backRight = new Talon(RobotMap.bRight);
+    public final RobotDrive drive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
+    public static boolean polarBear = true;
 
     protected void initDefaultCommand() {
         setDefaultCommand(new MecanumDrive());
@@ -45,6 +47,12 @@ public class DriveTrain extends Subsystem {
         SmartDashboard.putNumber("[DT] Y", y);
         SmartDashboard.putNumber("[DT] Theta", rotation);
         SmartDashboard.putNumber("[DT] Gyro", gyro);
-        drive.mecanumDrive_Cartesian(.7 * x, .7 * y, .7 * rotation, gyro);
+
+        if (polarBear == true) {
+            drive.mecanumDrive_Polar(Math.sqrt(x * x + y * y), MathUtils.atan2(y, x), rotation);
+        } else {
+            drive.mecanumDrive_Cartesian(.7 * x, .7 * y, .7 * rotation, gyro);
+        }
+
     }
 }

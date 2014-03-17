@@ -45,8 +45,11 @@ public class OI {
     private final Button loadBall;
     private final Button leaveBall;
     private final Button autoAim;
+    private final Button togglePolar;
     private final InternalButton setKick;
     private final InternalButton toggleRotation;
+    private final InternalButton toggleDrive;
+    private final InternalButton testDrive;
 
     public OI() {
         xbox = new XboxController(RobotMap.xboxController);
@@ -57,20 +60,28 @@ public class OI {
         raiseArm = new JoystickButton(xbox, RobotMap.raiseArm);
         lowerArm = new JoystickButton(xbox, RobotMap.lowerArm);
         autoAim = new JoystickButton(xbox, RobotMap.autoAim);
+        togglePolar = new JoystickButton(xbox, RobotMap.togglePolar);
         setKick = new InternalButton();
         toggleRotation = new InternalButton();
-
+        toggleDrive = new InternalButton();
+        testDrive = new InternalButton();
+        
         kickBall.whenPressed(new KickBall());
         loadBall.whileHeld(new ForwardLoad());
         leaveBall.whileHeld(new ReverseLoad());
         raiseArm.whileHeld(new StowArm());
         lowerArm.whileHeld(new LowerArm());
+        togglePolar.whenPressed(new ToggleBear());
 //        autoAim.whileHeld(new AutoAim());
         
         SmartDashboard.putData("Set Kick", setKick);
         setKick.whenPressed(new SetKick());
         SmartDashboard.putData("Toggle Rotation", toggleRotation);
         toggleRotation.whenPressed(new ToggleRotation());
+        SmartDashboard.putData("Toggle Drive Mode", toggleDrive);
+        toggleDrive.whenPressed(new ToggleBear());
+        SmartDashboard.putData("Test Drive Wheels", testDrive);
+        testDrive.whenPressed(new testDrive());
         
     }
 
