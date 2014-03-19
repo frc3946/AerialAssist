@@ -68,7 +68,7 @@ public class Boot extends PIDSubsystem {
         // setSetpoint() -  Sets where the PID controller should move the system
         //                  to
         // enable() - Enables the PID controller.
-        enable();
+//        enable();
     }
 
     public void initDefaultCommand() {
@@ -95,8 +95,8 @@ public class Boot extends PIDSubsystem {
     protected void usePIDOutput(double output) {
         // Use output to drive your system, like a motor
         // e.g. yourMotor.set(output);
-        if (Math.abs(output) < .25 && output != 0) {
-            output = (output / Math.abs(output)) * .25;
+        if (Math.abs(output) < .1) {
+            output = 0;
         }
         System.out.println("[Boot] Output :             " + output);
         bootMotor1.set(output);

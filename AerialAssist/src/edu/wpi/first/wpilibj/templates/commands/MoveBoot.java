@@ -16,7 +16,7 @@ public class MoveBoot extends CommandBase {
     double timeOut;
     double speed;
     double tAngle;
-    public static int useRotation = 1;    //0 to ignore; 1 to use
+    public static int useRotation = 0;    //0 to ignore; 1 to use
 
     public MoveBoot(double speed, double timeout, double target) {
         requires(boot);

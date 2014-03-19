@@ -5,10 +5,18 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 /**
  *
  * @author AJ
  */
+
+
 public class testDrive extends CommandBase {
 
     int currMotor;
@@ -21,12 +29,12 @@ public class testDrive extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        setTimeout(2);
         currMotor = 1;
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        setTimeout(2);
         switch (currMotor) {
             case 1:
                 driveTrain.frontLeft.set(.5);
@@ -39,6 +47,7 @@ public class testDrive extends CommandBase {
         }
         if (isTimedOut()) {
             currMotor++;
+            setTimeout(2);
         }
     }
 

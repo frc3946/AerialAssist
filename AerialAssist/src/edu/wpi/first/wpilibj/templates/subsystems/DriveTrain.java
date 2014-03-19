@@ -49,7 +49,7 @@ public class DriveTrain extends Subsystem {
         SmartDashboard.putNumber("[DT] Gyro", gyro);
 
         if (polarBear == true) {
-            drive.mecanumDrive_Polar(Math.sqrt(x * x + y * y), MathUtils.atan2(y, x), rotation);
+            drive.mecanumDrive_Polar(Math.sqrt(x * x + y * y), Math.toDegrees(MathUtils.atan2(y, x)), rotation);
         } else {
             drive.mecanumDrive_Cartesian(.7 * x, .7 * y, .7 * rotation, gyro);
         }
