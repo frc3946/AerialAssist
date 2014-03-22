@@ -6,8 +6,8 @@
 package edu.wpi.first.wpilibj.templates.subsystems;
 
 import edu.wpi.first.wpilibj.AnalogChannel;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Timer;
-import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.RobotMap;
@@ -26,8 +26,8 @@ public class Boot extends PIDSubsystem {
     private static final double Ki = 0.0;
     private static final double Kd = 0.0;
 
-    Victor bootMotor1 = new Victor(RobotMap.bootMotor1);
-    Victor bootMotor2 = new Victor(RobotMap.bootMotor2);
+    Talon bootMotor1 = new Talon(RobotMap.bootMotor1);
+    Talon bootMotor2 = new Talon(RobotMap.bootMotor2);
     AnalogChannel rotationSensor = new AnalogChannel(RobotMap.bootSensor);
 
     public double angle;
