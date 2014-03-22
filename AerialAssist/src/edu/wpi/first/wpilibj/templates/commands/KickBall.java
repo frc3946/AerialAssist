@@ -32,7 +32,6 @@ public class KickBall extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-        System.out.println(sequence.length);
         for(i = 0; i < sequence.length; i++){
             System.out.println("KickBall For Loop");
             addSequential(new MoveBoot(sequence[i][0], sequence[i][1], sequence[i][2]));

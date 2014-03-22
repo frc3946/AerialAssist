@@ -5,8 +5,9 @@
 package edu.wpi.first.wpilibj.templates.commands;
 
 import edu.wpi.first.wpilibj.GenericHID;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
+import edu.wpi.first.wpilibj.templates.RobotTemplate;
 
 
 
@@ -60,7 +61,7 @@ public class MecanumDrive extends CommandBase {
 //        for(double i = 1.0; i < dx && i < dy && i < dt; i += 1.0) {
 //            setTimeout(.4);
 //            while(!isTimedOut()){
-        driveTrain.mecanumDrive(X, Y, throttle, gyro.getAngle());
+        driveTrain.mecanumDrive(X, Y, throttle, (gyro.getAngle()- (RobotTemplate.gyroOff * Timer.getFPGATimestamp())));
 //            }
 //        }
     }
