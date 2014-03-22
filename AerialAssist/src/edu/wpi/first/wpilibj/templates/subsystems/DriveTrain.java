@@ -47,6 +47,11 @@ public class DriveTrain extends Subsystem {
         SmartDashboard.putNumber("[DT] Y", y);
         SmartDashboard.putNumber("[DT] Theta", rotation);
         SmartDashboard.putNumber("[DT] Gyro", gyro);
+        if(DriveTrain.polarBear == true){
+            SmartDashboard.putString("polarBear", "Polar Mode");
+        }else{
+            SmartDashboard.putString("polarBear", "Field Orientation");
+        }
 
         if (polarBear == true) {
             drive.mecanumDrive_Polar(Math.sqrt(x * x + y * y), Math.toDegrees(MathUtils.atan2(y, x)), rotation);

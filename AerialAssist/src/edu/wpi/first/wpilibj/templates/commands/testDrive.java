@@ -38,12 +38,16 @@ public class testDrive extends CommandBase {
         switch (currMotor) {
             case 1:
                 driveTrain.frontLeft.set(.5);
+                break;
             case 2:
                 driveTrain.backLeft.set(.5);
+                break;
             case 3:
                 driveTrain.frontRight.set(-.5);
+                break;
             case 4:
                 driveTrain.backRight.set(-.5);
+                break;
         }
         if (isTimedOut()) {
             currMotor++;
