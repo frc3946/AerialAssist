@@ -28,6 +28,7 @@ public class SetKick extends CommandBase {
         KickBall.sequence[0][0] = SmartDashboard.getNumber("Speed 1");  
         KickBall.sequence[0][1] = SmartDashboard.getNumber("Timeout 1");  
         KickBall.sequence[0][2] = SmartDashboard.getNumber("Angle 1");  
+        System.out.println("Kick Being Set");
         
         KickBall.sequence[1][0] = SmartDashboard.getNumber("Speed 2");  
         KickBall.sequence[1][1] = SmartDashboard.getNumber("Timeout 2");  

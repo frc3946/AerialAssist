@@ -39,6 +39,7 @@ public class Boot extends PIDSubsystem {
     // Initialize your subsystem here
     public Boot() {
         super("Boot", Kp, Ki, Kd);
+        System.out.println("Boot Initialiased");
         KickBall.sequence[0][0] = -20;
         KickBall.sequence[0][1] = .7;
         KickBall.sequence[0][2] = 147;

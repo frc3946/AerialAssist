@@ -21,8 +21,6 @@ public class LoadingArm extends Subsystem {
         stopArm();
     }
     
-    //TODO: Allow Simultaneous Arm and Wheel movement
-
     public void lowerArm() {
         green.set(DoubleSolenoid.Value.kForward);       //pressurised
         white.set(DoubleSolenoid.Value.kReverse);       //exhausted

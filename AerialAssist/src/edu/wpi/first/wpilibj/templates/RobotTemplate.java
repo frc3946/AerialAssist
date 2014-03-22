@@ -9,6 +9,7 @@ package edu.wpi.first.wpilibj.templates;
 
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -31,7 +32,8 @@ public class RobotTemplate extends IterativeRobot {
     Command autonomousCommand;
     Command compressor;
     Command printPi;
-
+    public static double gyroOff;
+    
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
@@ -45,7 +47,9 @@ public class RobotTemplate extends IterativeRobot {
         // Initialize all subsystems
         CommandBase.init();
         SmartDashboard.putData(Scheduler.getInstance());
-        CommandBase.gyro.reset();
+        Timer.delay(1);
+        gyroOff = CommandBase.gyro.getAngle();
+        
     }
 
     public void autonomousInit() {
