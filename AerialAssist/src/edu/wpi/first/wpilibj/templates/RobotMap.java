@@ -44,8 +44,7 @@ public class RobotMap {
     public static final int grabBall = XboxController.ButtonType.kY.value;
     public static final int releaseBall = XboxController.ButtonType.kA.value;
     public static final int autoAim = XboxController.ButtonType.kB.value;
-    public static final int adjustSpeed = XboxController.ButtonType.kLeftStick.value;
-    public static final int adjustTime = XboxController.ButtonType.kRightStick.value;
+    public static final int togglePolar = XboxController.ButtonType.kBack.value;
 
     //Pi Data
     public static int offset = 0;

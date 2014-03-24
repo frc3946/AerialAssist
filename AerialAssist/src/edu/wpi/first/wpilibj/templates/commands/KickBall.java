@@ -13,8 +13,8 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  * @author nrladmin
  */
 public class KickBall extends CommandGroup {
-    static double[][] sequence = new double[3][6];
-    static int i;
+    public static double[][] sequence = new double[3][3];
+    public static int i;
 
     public KickBall() {
         // Add Commands here:
@@ -32,16 +32,12 @@ public class KickBall extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-//        for(i = 0; i < sequence.length; i++){
-//            System.out.println("KickBall For Loop");
-//            addSequential(new MoveBoot(sequence[0][i], sequence[1][i]));
-//        }
-        addSequential(new MoveBoot(-20, 3, 147));
-//        addSequential(new MoveBoot(5, .3, 0));
-        addSequential(new MoveBoot(1575, 4.4, 205));
-//        addSequential(new MoveBoot(-.4, .15, 0));
-//        addSequential(new MoveBoot(-.25, .1, 0));
-//        addSequential(new MoveBoot(-.12, .05, 0));
-//        addSequential(new MoveBoot(1, .2, 0));
+        for(i = 0; i < sequence.length; i++){
+            System.out.println("KickBall For Loop");
+            addSequential(new MoveBoot(sequence[i][0], sequence[i][1], sequence[i][2]));
+        }
+        
+//        addSequential(new MoveBoot(-20, .7, 147));
+//        addSequential(new MoveBoot(1575, .5, 205));
     }
 }

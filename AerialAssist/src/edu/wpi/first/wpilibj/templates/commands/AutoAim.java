@@ -5,7 +5,9 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.templates.RobotTemplate;
 import edu.wpi.first.wpilibj.templates.subsystems.ThreadedberryPi;
 
 /**
@@ -42,11 +44,11 @@ public class AutoAim extends CommandBase {
         distance = pi.getDistance();
         offset = pi.getOffset();
         if (Math.abs(offset) >= 15) {
-            driveTrain.mecanumDrive(0, 0, offset / 240, gyro.getAngle());
+            driveTrain.mecanumDrive(0, 0, offset / 240, (gyro.getAngle()- (RobotTemplate.gyroOff * Timer.getFPGATimestamp())));
         } else if (Math.abs(distance - 11000) >= 250) {
-            driveTrain.mecanumDrive((distance - 11000) * Math.cos(gyro.getAngle()),
-                    (distance - 11000) * Math.sin(gyro.getAngle()),
-                    0, gyro.getAngle());
+            driveTrain.mecanumDrive((distance - 11000) * Math.cos((gyro.getAngle()- (RobotTemplate.gyroOff * Timer.getFPGATimestamp()))),
+                    (distance - 11000) * Math.sin((gyro.getAngle()- (RobotTemplate.gyroOff * Timer.getFPGATimestamp()))),
+                    0, (gyro.getAngle()- (RobotTemplate.gyroOff * Timer.getFPGATimestamp())));
         } else {
             output = true;
         }

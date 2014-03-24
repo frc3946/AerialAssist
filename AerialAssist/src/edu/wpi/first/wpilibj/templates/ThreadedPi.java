@@ -165,7 +165,7 @@ public class ThreadedPi {
         m_enabled = false;
         m_thread = new RaspberryPiThread(this);
         try{
-         connect();
+            connect();
         } catch (IOException ex){
             ex.printStackTrace();
             System.out.println(ex.getMessage());

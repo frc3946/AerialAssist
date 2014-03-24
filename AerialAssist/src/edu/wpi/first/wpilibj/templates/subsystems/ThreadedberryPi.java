@@ -77,6 +77,14 @@ public class ThreadedberryPi extends Subsystem {
        return raspberryPi.getTime();
     }
     
+    public String getFound() {
+        return raspberryPi.getFound();
+    }
+    
+    public String getHot() {
+        return raspberryPi.getHot();
+    }
+    
     public boolean getReport() {
        return raspberryPi.getReport();
     }

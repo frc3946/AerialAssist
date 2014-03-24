@@ -16,7 +16,7 @@ public class ReverseLoad extends CommandBase {
     public ReverseLoad() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
-        requires(loadingArm);
+        requires(loadFingers);
     }
 
     // Called just before this Command runs the first time
@@ -26,7 +26,7 @@ public class ReverseLoad extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        loadingArm.reverseLoad();
+        loadFingers.reverseLoad();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -36,7 +36,7 @@ public class ReverseLoad extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
-        loadingArm.stopLoad();
+        loadFingers.stopLoad();
     }
 
     // Called when another command which requires one or more of the same

@@ -21,7 +21,7 @@ public abstract class CommandBase extends Command {
     public static Boot boot = new Boot();
     public static Gyro gyro = new Gyro(RobotMap.gyro);
     public static LoadingArm loadingArm = new LoadingArm();
-    public static FunLights funLights = new FunLights();
+    public static LoadingFingers loadFingers = new LoadingFingers();
 //    public static RaspberryPi raspberryPi = new RaspberryPi();
 //    public static ThreadedberryPi threadedberryPi = new ThreadedberryPi();
 //   public static CatapultMotor catapult = new CatapultMotor();
@@ -33,12 +33,12 @@ public abstract class CommandBase extends Command {
         // yet. Thus, their requires() statements may grab null pointers. Bad
         // news. Don't move it.
         oi = new OI();
-
-        gyro.reset();
+        
         // Show what command your subsystem is running on the SmartDashboard
         SmartDashboard.putData(driveTrain);
         SmartDashboard.putData(compressor);
         SmartDashboard.putData(loadingArm);
+        SmartDashboard.putData(loadFingers);
         SmartDashboard.putData(boot);
         SmartDashboard.putData("PID Controller",boot.getPIDController());
         
