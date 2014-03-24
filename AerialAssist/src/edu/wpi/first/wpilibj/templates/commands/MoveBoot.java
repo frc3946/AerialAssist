@@ -5,14 +5,18 @@
  */
 package edu.wpi.first.wpilibj.templates.commands;
 
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 /**
  *
  * @author OpalStone
  */
 public class MoveBoot extends CommandBase {
+
     double timeOut;
     double speed;
     double tAngle;
+    int useRotation = 1;    //0 to ignore; 1 to use
 
     public MoveBoot(double speed, double timeout, double target) {
         requires(boot);
@@ -29,13 +33,14 @@ public class MoveBoot extends CommandBase {
     }
 
     protected void execute() {
+        SmartDashboard.putNumber("Rotation Sensor", boot.angle);
     }
 
     protected boolean isFinished() {
-        double angleDiff1 = ((boot.angle - tAngle)+360)%360;
-        double angleDiff2 = ((tAngle - boot.angle)+360)%360;
-        if(Math.min(angleDiff1, angleDiff2) < 30 || isTimedOut()){
-              System.out.println("Boot stopped...");
+        double angleDiff1 = ((boot.angle - tAngle) + 360) % 360;
+        double angleDiff2 = ((tAngle - boot.angle) + 360) % 360;
+        if (Math.min(angleDiff1, angleDiff2) < 30 * (2 * useRotation - 1) || isTimedOut()) {
+            System.out.println("Boot stopped...");
             return true;
         } else {
             return false;
