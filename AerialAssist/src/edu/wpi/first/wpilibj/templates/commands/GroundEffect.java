@@ -57,6 +57,9 @@ public class GroundEffect extends CommandBase {
             if (Timer.getFPGATimestamp() - life > 165) {
                 factor = 0.5;
             }
+            if (Timer.getFPGATimestamp() - life > 195) {
+                factor = 1;
+            }
             setTimeout(pattern[patternIndex] * factor);
         }
     }
