@@ -6,6 +6,7 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.SocketPi;
+import edu.wpi.first.wpilibj.templates.commands.PrintPiData;
 //import org.usfirst.frc3946.UltimateAscent.commands.PrintPiData;
 
 /**
@@ -20,7 +21,7 @@ public class RaspberryPi extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
-//        setDefaultCommand(new PrintPiData());
+        setDefaultCommand(new PrintPiData());
     }
     public SocketPi getPi() {
         return raspberryPi;

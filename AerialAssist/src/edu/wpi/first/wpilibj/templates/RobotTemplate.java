@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.commands.Autonomous;
 import edu.wpi.first.wpilibj.templates.commands.CommandBase;
+import edu.wpi.first.wpilibj.templates.commands.Delay;
 //import edu.wpi.first.wpilibj.templates.commands.PrintThreadPiData;
 import edu.wpi.first.wpilibj.templates.commands.StartCompressor;
 
@@ -47,8 +48,8 @@ public class RobotTemplate extends IterativeRobot {
         // Initialize all subsystems
         CommandBase.init();
         SmartDashboard.putData(Scheduler.getInstance());
-        Timer.delay(1);
-        gyroOff = CommandBase.gyro.getAngle();
+        new Delay(1);
+        gyroOff = CommandBase.gyro.getAngle()/Timer.getFPGATimestamp();
         
     }
 
@@ -56,6 +57,8 @@ public class RobotTemplate extends IterativeRobot {
         // schedule the autonomous command (example)
         autonomousCommand.start();
         compressor.start();
+        new Delay(1);
+        gyroOff = CommandBase.gyro.getAngle()/Timer.getFPGATimestamp();
     }
 
     /**
@@ -72,6 +75,8 @@ public class RobotTemplate extends IterativeRobot {
         // this line or comment it out.
         autonomousCommand.cancel();
         compressor.start();
+        new Delay(1);
+        gyroOff = CommandBase.gyro.getAngle()/Timer.getFPGATimestamp();
     }
 
     /**

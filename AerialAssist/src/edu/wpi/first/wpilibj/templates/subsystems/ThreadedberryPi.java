@@ -5,6 +5,7 @@
 package edu.wpi.first.wpilibj.templates.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.templates.PrintThreadPiData;
 import edu.wpi.first.wpilibj.templates.ThreadedPi;
 //import edu.wpi.first.wpilibj.templates.commands.PrintThreadPiData;
 
@@ -20,7 +21,7 @@ public class ThreadedberryPi extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
-//        setDefaultCommand(new PrintThreadPiData());
+        setDefaultCommand(new PrintThreadPiData());
     }
     
     /**

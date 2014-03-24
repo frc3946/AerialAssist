@@ -96,7 +96,7 @@ public class Boot extends PIDSubsystem {
     protected void usePIDOutput(double output) {
         // Use output to drive your system, like a motor
         // e.g. yourMotor.set(output);
-        if (Math.abs(output) < .1) {
+        if (Math.abs(output) < .07) {
             output = 0;
         }
         System.out.println("[Boot] Output :             " + output);

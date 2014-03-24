@@ -21,12 +21,12 @@ public class ToggleBear extends CommandBase {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        gyro.reset();
         DriveTrain.polarBear = !(DriveTrain.polarBear);
         if(DriveTrain.polarBear == true){
             SmartDashboard.putString("polarBear", "Polar Mode");
         }else{
             SmartDashboard.putString("polarBear", "Field Orientation");
-            CommandBase.gyro.reset();
         }
     }
 

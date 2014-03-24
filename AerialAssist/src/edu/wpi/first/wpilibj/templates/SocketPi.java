@@ -51,6 +51,8 @@ public class SocketPi {
      * Constructor using custom
      * @param ip Address of Server "xxx.xxx.xxx.xxx"
      * @param port of Server "XXXXX"
+     * @param bufferSize
+     * @param delimiter
      */
     public SocketPi(String ip, String port, int bufferSize, char delimiter) {
         try {
@@ -62,6 +64,7 @@ public class SocketPi {
     
     /**
      * Connect using last settings
+     * @throws java.io.IOException
      */
     public void connect() throws IOException {
         if(beenConnected == false) {
@@ -74,6 +77,8 @@ public class SocketPi {
      * Connect using custom settings
      * @param ip Address of Server "xxx.xxx.xxx.xxx"
      * @param port of Server "XXXXX"
+     * @param bufferSize
+     * @param delimiter
      */
     public void connect(String ip, String port, int bufferSize, char delimiter) throws IOException {
         this.ip = ip;
@@ -101,6 +106,7 @@ public class SocketPi {
     
     /**
      * Closes socket connection
+     * @throws java.io.IOException
      */
     public void disconnect() throws IOException {
         is.close();
