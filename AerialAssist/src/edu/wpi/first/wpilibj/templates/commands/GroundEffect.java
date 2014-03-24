@@ -22,7 +22,7 @@ public class GroundEffect extends CommandBase {
     double factor = 1;
     
     public GroundEffect() {
-        this.pattern = new double[]{1, 1, 1, 1, 1, 3, 3, 1, 3, 1, 3, 3, 1, 1, 1, 1, 1, 1};
+        this.pattern = new double[]{1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 3};
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
