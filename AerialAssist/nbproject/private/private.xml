@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/AJ/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/subsystems/LoadingArm.java</file>
             <file>file:/C:/Users/AJ/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/CommandBase.java</file>
             <file>file:/C:/Users/AJ/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/RobotTemplate.java</file>
@@ -12,6 +13,12 @@
             <file>file:/C:/Users/AJ/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/PrintThreadPiData.java</file>
             <file>file:/C:/Users/AJ/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/SocketPi.java</file>
             <file>file:/C:/Users/AJ/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/PrintPiData.java</file>
+=======
+            <file>file:/C:/Users/Team3946%20GeForce/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/GroundEffect.java</file>
+            <file>file:/C:/Users/Team3946%20GeForce/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/RobotMap.java</file>
+            <file>file:/C:/Users/Team3946%20GeForce/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/commands/CommandBase.java</file>
+            <file>file:/C:/Users/Team3946%20GeForce/Documents/NetBeansProjects/AerialAssist/AerialAssist/src/edu/wpi/first/wpilibj/templates/subsystems/FunLights.java</file>
+>>>>>>> f84f0927649a63d5a23c22c58965768bf49f2352
         </group>
     </open-files>
 </project-private>

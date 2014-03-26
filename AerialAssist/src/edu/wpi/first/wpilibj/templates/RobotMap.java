@@ -16,9 +16,11 @@ public class RobotMap {
     public static final int bootMotor1 = 5;
     public static final int bootMotor2 = 6;
 
+
     // Relays
     public static final int compressor = 1;
     public static final int loadFingers = 2;
+    public static final int funLights = 8;
 
     // Solenoids:
     public static final int pG = 1;
