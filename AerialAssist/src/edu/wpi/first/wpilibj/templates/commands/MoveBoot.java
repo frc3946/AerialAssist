@@ -16,7 +16,7 @@ public class MoveBoot extends CommandBase {
     double timeOut;
     double speed;
     double tAngle;
-    public static int useRotation = 0;    //0 to ignore; 1 to use
+    public static int useRotation = 0;      //  0 to ignore; 1 to use
 
     public MoveBoot(double speed, double timeout, double target) {
         requires(boot);
@@ -38,7 +38,7 @@ public class MoveBoot extends CommandBase {
 
     protected boolean isFinished() {
         double angleDiff1 = ((boot.angle - tAngle) + 360) % 360;
-        double angleDiff2 = ((tAngle - boot.angle) + 360) % 360;
+        double angleDiff2 = ((tAngle - boot.angle ) + 360) % 360;
         if (Math.min(angleDiff1, angleDiff2) < 30 * (2 * useRotation - 1) || isTimedOut()) {
             System.out.println("Boot stopped...");
             return true;
@@ -54,5 +54,4 @@ public class MoveBoot extends CommandBase {
     protected void interrupted() {
         end();
     }
-
 }

@@ -9,32 +9,33 @@ package edu.wpi.first.wpilibj.templates;
 public class RobotMap {
 
     // PWM:
-    public static final int fLeft = 1;
-    public static final int fRight = 2;
-    public static final int bRight = 3;
-    public static final int bLeft = 4;
-    public static final int bootMotor1 = 5;
-    public static final int bootMotor2 = 6;
+    public static final int fLeft = 1;          //  Green
+    public static final int fRight = 2;         //  Brown
+    public static final int bRight = 3;         //  Yellow
+    public static final int bLeft = 4;          //  Orange
+    public static final int bootMotor1 = 5;     //  Blue
+    public static final int bootMotor2 = 6;     //  Purple
 
 
     // Relays
-    public static final int compressor = 1;
-    public static final int loadFingers = 2;
-    public static final int funLights = 8;
+    public static final int compressor = 1;     //  White
+    public static final int loadFingers = 2;    //  Red
+    public static final int funLights = 8;      //  Grey
 
     // Solenoids:
-    public static final int pG = 1;
-    public static final int xG = 2;
-    public static final int pW = 3;
-    public static final int xW = 4;
+    public static final int pG = 1;             //  Orange
+    public static final int xG = 2;             //  Green
+    public static final int pW = 3;             //  Blue
+    public static final int xW = 4;             //  Yellow
 
     // Digital:
-    public static final int pressureSwitch = 1;
+    public static final int pressureSwitch = 1; //  Black
 
     // Analog:
-    public static final int gyro = 1;
-    public static final int bootSensor = 2;
-    public static final int knob = 3;
+    public static final int gyro = 1;           //  color
+    public static final int bootSensor = 2;     //  color
+    public static final int knob = 3;           //  color       //  0000.3 Ohms on Left
+                                                                //  4400   Ohms on Right
 
     //Controllers:
     public static final int xboxController = 1;

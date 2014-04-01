@@ -30,16 +30,12 @@ public class AutoDrive extends CommandBase {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        driveTrain.mecanumDrive(-1, 0, 0, (gyro.getAngle()- (RobotTemplate.gyroOff * Timer.getFPGATimestamp())));
+        driveTrain.mecanumDrive(0, -1, 0, 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        if(isTimedOut()) {
-            return false;
-        } else {
-            return true;
-        }
+        return isTimedOut();
     }
 
     // Called once after isFinished returns true

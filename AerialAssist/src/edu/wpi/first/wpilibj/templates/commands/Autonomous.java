@@ -35,17 +35,20 @@ public class Autonomous extends CommandGroup {
         //Read knob to determine which direction to auto aim.
         AnalogChannel knob;
         knob = new AnalogChannel(RobotMap.knob);
-        int knobValue = knob.getValue();
+        double knobValue = knob.getVoltage();
         System.out.println("knobValue = " + knobValue);
   
-        //Lower arm.
-        addParallel (new LowerArm());
         
         //Move forward slightly. 
-        addSequential (new AutoDrive(2.5));
+        addSequential (new AutoDrive(1.4));
+        
+        //Lower arm.
+        addParallel (new LowerArm());
+        addParallel(new ForwardLoad());
+        addSequential(new Delay(.5));
         
         //Run AutoAim for up to 4 seconds. 
-        addSequential (new AutoAim());
+//        addSequential (new AutoAim());
 
         //Run KickBall to shoot
         addSequential (new KickBall());

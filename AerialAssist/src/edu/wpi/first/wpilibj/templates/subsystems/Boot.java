@@ -28,13 +28,15 @@ public class Boot extends PIDSubsystem {
 
     Talon bootMotor1 = new Talon(RobotMap.bootMotor1);
     Talon bootMotor2 = new Talon(RobotMap.bootMotor2);
-    AnalogChannel rotationSensor = new AnalogChannel(RobotMap.bootSensor);
+    public AnalogChannel rotationSensor = new AnalogChannel(RobotMap.bootSensor);
 
     public double angle;
     private double oldAngle = 1;
     private double time = 1;
     private double lastTime = 1;
     private double rpm;
+    public static double nat0 = 132;              //  val between 0 and 360 to allow for bad kick pot
+                                                //  set in robotTemplate 
 
     // Initialize your subsystem here
     public Boot() {
@@ -82,12 +84,13 @@ public class Boot extends PIDSubsystem {
         // Return your input value for the PID loop
         // e.g. a sensor, like a potentiometer:
         // yourPot.getAverageVoltage() / kYourMaxVoltage;
-        angle = ((((rotationSensor.getVoltage() - .5) / 4) * 360) + 132) % 360;
+        angle = ((((rotationSensor.getVoltage() - .5) / 4) * 360) - nat0) % 360;
         time = Timer.getFPGATimestamp();
         double angleDiff1 = ((angle - oldAngle) + 360) % 360;
         double angleDiff2 = ((oldAngle - angle) + 360) % 360;
         rpm = (Math.min(angleDiff1, angleDiff2) % 360) / (time - lastTime) / 1000;
         System.out.println("Angle :           " + (int)angle + "\nRPM : " + (int)rpm);
+        SmartDashboard.putNumber("Nat 0", nat0);
         oldAngle = angle;
         lastTime = time;
         return rpm;
@@ -96,7 +99,7 @@ public class Boot extends PIDSubsystem {
     protected void usePIDOutput(double output) {
         // Use output to drive your system, like a motor
         // e.g. yourMotor.set(output);
-        if (Math.abs(output) < .07) {
+        if (Math.abs(output) < .15) {
             output = 0;
         }
         System.out.println("[Boot] Output :             " + output);

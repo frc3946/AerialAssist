@@ -164,6 +164,7 @@ public class ThreadedPi {
     public ThreadedPi() {
         m_enabled = false;
         m_thread = new RaspberryPiThread(this);
+        System.out.println("Raspberry Pi Thread Initialised");
         try{
             connect();
         } catch (IOException ex){
@@ -179,7 +180,6 @@ public class ThreadedPi {
         m_is = m_socket.openInputStream();
         m_os = m_socket.openOutputStream();
         m_connected = true;
-        
     }
     
     public synchronized void disconnect() throws IOException {

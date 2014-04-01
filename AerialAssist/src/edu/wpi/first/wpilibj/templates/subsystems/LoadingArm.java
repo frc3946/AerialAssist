@@ -7,6 +7,7 @@ package edu.wpi.first.wpilibj.templates.subsystems;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
+import edu.wpi.first.wpilibj.templates.commands.StopArm;
 
 /**
  *
@@ -18,7 +19,7 @@ public class LoadingArm extends Subsystem {
     private final DoubleSolenoid white = new DoubleSolenoid(RobotMap.pW, RobotMap.xW);
 
     protected void initDefaultCommand() {
-        stopArm();
+        setDefaultCommand(new StopArm());
     }
     
     public void lowerArm() {

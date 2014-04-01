@@ -18,20 +18,21 @@ public class GroundEffect extends CommandBase {
     double timeout = 1;
     final double[] pattern;
     int patternIndex = 0;
-    double life = 0;
-    double factor = 1;
+    //double life = 0;
+    //double factor = 1;
     
     public GroundEffect() {
-        this.pattern = new double[]{1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 3};
+        this.pattern = new double[]{2, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 6};
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+        requires(funLights);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
         funLights.lightsOn();
         setTimeout(pattern[patternIndex]);
-        life = Timer.getFPGATimestamp();
+        //life = Timer.getFPGATimestamp();
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -39,32 +40,33 @@ public class GroundEffect extends CommandBase {
         if (isTimedOut() == true){
             funLights.lightsToggle();
             patternIndex ++;
-            if (patternIndex >= pattern.length){
-                patternIndex = 0;
+          //  if (patternIndex >= pattern.length){
+           //     patternIndex = 0;
             }
-            if (Timer.getFPGATimestamp() - life > 45) {
-                factor = 0.5;
-            }
-            if (Timer.getFPGATimestamp() - life > 75) {
-                factor = 0.25;
-            }
-            if (Timer.getFPGATimestamp() - life > 105) {
-                factor = 0.125;
-            }
-            if (Timer.getFPGATimestamp() - life > 135) {
-                factor = 0.25;
-            }
-            if (Timer.getFPGATimestamp() - life > 165) {
-                factor = 0.5;
-            }
-            if (Timer.getFPGATimestamp() - life > 195) {
-                factor = 1;
-            }
-            setTimeout(pattern[patternIndex] * factor);
-        }
+        //    if (Timer.getFPGATimestamp() - life > 45) {
+            //    factor = 0.5;
+            //}
+            //if (Timer.getFPGATimestamp() - life > 75) {
+            //    factor = 0.25;
+            //}
+            //if (Timer.getFPGATimestamp() - life > 105) {
+            //    factor = 0.125;
+            //}
+            //if (Timer.getFPGATimestamp() - life > 135) {
+            //    factor = 0.25;
+            //}
+            //if (Timer.getFPGATimestamp() - life > 165) {
+            //    factor = 0.5;
+            //}
+            //if (Timer.getFPGATimestamp() - life > 195) {
+            //   factor = 1;
+            //}
+            //setTimeout(pattern[patternIndex] * factor);
+        //}
     }
 
     // Make this return true when this Command no longer needs to run execute()
+            
     protected boolean isFinished() {
         return false;
     }

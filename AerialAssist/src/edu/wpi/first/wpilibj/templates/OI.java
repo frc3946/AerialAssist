@@ -5,6 +5,7 @@ import edu.wpi.first.wpilibj.buttons.InternalButton;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.commands.*;
+import edu.wpi.first.wpilibj.templates.subsystems.Boot;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -46,10 +47,13 @@ public class OI {
     private final Button leaveBall;
     private final Button autoAim;
     private final Button togglePolar;
+    
     private final InternalButton setKick;
     private final InternalButton toggleRotation;
     private final InternalButton toggleDrive;
     private final InternalButton testDrive;
+    private final InternalButton reZero;
+    
 
     public OI() {
         xbox = new XboxController(RobotMap.xboxController);
@@ -61,10 +65,13 @@ public class OI {
         lowerArm = new JoystickButton(xbox, RobotMap.lowerArm);
         autoAim = new JoystickButton(xbox, RobotMap.autoAim);
         togglePolar = new JoystickButton(xbox, RobotMap.togglePolar);
+        
         setKick = new InternalButton();
         toggleRotation = new InternalButton();
         toggleDrive = new InternalButton();
         testDrive = new InternalButton();
+        reZero = new InternalButton();
+        
         
         kickBall.whenPressed(new KickBall());
         loadBall.whileHeld(new ForwardLoad());
@@ -82,6 +89,8 @@ public class OI {
         toggleDrive.whenPressed(new ToggleBear());
         SmartDashboard.putData("Test Drive Wheels", testDrive);
         testDrive.whenPressed(new testDrive());
+        SmartDashboard.putData("Reset Boot Zero", reZero);
+        reZero.whenPressed(new ReZero());
         
     }
 

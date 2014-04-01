@@ -5,7 +5,7 @@
 package edu.wpi.first.wpilibj.templates.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.templates.PrintThreadPiData;
+import edu.wpi.first.wpilibj.templates.commands.PrintThreadPiData;
 import edu.wpi.first.wpilibj.templates.ThreadedPi;
 //import edu.wpi.first.wpilibj.templates.commands.PrintThreadPiData;
 
