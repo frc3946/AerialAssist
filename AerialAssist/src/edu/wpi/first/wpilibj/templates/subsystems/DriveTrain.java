@@ -54,7 +54,7 @@ public class DriveTrain extends Subsystem {
         }
 
         if (polarBear == true) {
-            drive.mecanumDrive_Polar(Math.sqrt(x * x + y * y), (Math.toDegrees(MathUtils.atan2(y, x)) + 90), rotation);
+            drive.mecanumDrive_Polar(Math.sqrt(x * x + y * y), (Math.toDegrees(MathUtils.atan2(y, x)) - 90), rotation);
         } else {
             drive.mecanumDrive_Cartesian(.7 * x, .7 * y, .7 * rotation, gyro);
         }

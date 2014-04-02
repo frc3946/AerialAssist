@@ -22,7 +22,7 @@ public abstract class CommandBase extends Command {
     public static Gyro gyro = new Gyro(RobotMap.gyro);
     public static LoadingArm loadingArm = new LoadingArm();
     public static LoadingFingers loadFingers = new LoadingFingers();
-    public static ThreadedberryPi threadedberryPi = new ThreadedberryPi();
+//    public static ThreadedberryPi threadedberryPi = new ThreadedberryPi();
     public static FunLights funLights = new FunLights();
 
     public static void init() {
